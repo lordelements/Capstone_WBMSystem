@@ -28,6 +28,27 @@
 		</nav>
 	</header>
 		<section id="heroSearch" class="hero-search mtop-0 pt-0 pb-0">
+			<?php
+			if(isset($_SESSION['status']) && $_SESSION['status'])
+			?>
+				<script>
+					swal({
+						title: "<?php echo $_SESSION['status']?>",
+						text: "<?php echo $_SESSION['status_text']?>",
+						icon: "<?php echo $_SESSION['status_code'];?>",
+						button: "OK",
+					});
+					// swal({
+					// title: "Good job!",
+					// text: "You clicked the button!",
+					// icon: "success",
+					// button: "Aww yiss!",
+					// });
+				</script>
+			<?php
+			unset($_SESSION['status']);
+			?>
+		
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12">
@@ -270,11 +291,12 @@
 		  });
 		});
 	</script>
-<script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/jquery-2.2.4.min.js"></script>
-<script src="assets/js/plugins.js"></script>
-<script src="assets/js/functions.js"></script>
-<script src="assets/loadGeo.js"></script>
-
+	<script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/jquery-2.2.4.min.js"></script>
+	<script src="assets/js/plugins.js"></script>
+	<script src="assets/js/functions.js"></script>
+	<script src="assets/loadGeo.js"></script>
+	<script src="assets/sweetalert.min.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 
 <script>
@@ -305,6 +327,7 @@
 		}
 	}
 
+	
 </script>
 
 

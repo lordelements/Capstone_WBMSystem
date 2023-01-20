@@ -1,8 +1,6 @@
 <?php
-
-session_start();
-session_destroy();
-
+	session_start();
+	// error_reporting(0);
 ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
@@ -33,12 +31,27 @@ session_destroy();
 		</nav>
 	</header>
 	<section id="heroSearch" class="hero-search mtop-100 pt-0 pb-0">
-				<div class="container">
+		<?php
+		 if(isset($_SESSION['status']) && $_SESSION['status'])
+		?>
+			<script>
+				swal({
+					title: "<?php echo $_SESSION['status']?>",
+					text: "<?php echo $_SESSION['status_text']?>",
+					icon: "<?php echo $_SESSION['status_code'];?>",
+					button: "OK",
+				});
+			</script>
+		<?php
+		 unset($_SESSION['status']);
+		?>
+		
+		<div class="container">
 			<div class="row">
+			
 				<div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="slider--content">
 						<div class="text-center" style="margin-top: -110px;">
-
 							<img src="logo.png" alt="Barangay Zone 1 Bulan Sorsogon logo" width="600" height="600" style="margin-top: -20px;">
 						</div>
 					</div>
@@ -71,7 +84,8 @@ session_destroy();
 <script src="assets/js/plugins.js"></script>
 <script src="assets/js/functions.js"></script>
 <script src="assets/loadGeo.js"></script>
-
+<!-- <script src="assets/sweetalert.min.js"></script> -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 
 <script>
@@ -101,7 +115,12 @@ session_destroy();
 
 		}
 	}
-
+	// swal({
+	// 	title: "Good job!",
+	// 	text: "You clicked the button!",
+	// 	icon: "success",
+	// 	button: "Aww yiss!",
+	// 	});
 </script>
 
 

@@ -18,68 +18,94 @@ $full = $fname . ' ' . $mname . ' ' . $lname;
 $res = mysqli_query($cn, "SELECT * FROM accounts where email = '$email'");
 
 if($pass == $conpass){
-	if($res && mysqli_num_rows($res)>0)
-	{
-	  	function myAlert($msg, $url)
+	if (strlen($pass) < 8) {
+		$_SESSION['status'] = "Error";
+		$_SESSION['status_text'] = "Error: Password must be at least 8 characters long.";
+		$_SESSION['status_code'] = "error";
+		header('Location: index.php');
+	} else {
+		if($res && mysqli_num_rows($res)>0)
 		{
-	    echo '<script language="javascript">alert("'.$msg.'");</script>';
-	    echo "<script>document.location = '$url'</script>";
+			  // function myAlert($msg, $url)
+			// {
+			// echo '<script language="javascript">alert("'.$msg.'");</script>';
+			// echo "<script>document.location = '$url'</script>";
+			// }
+			// myAlert("Email already taken!", "index.php");
+	
+			$_SESSION['status'] = "Error";
+			$_SESSION['status_text'] = "Email already taken!";
+			$_SESSION['status_code'] = "error";
+			header('Location: index.php');
 		}
-		myAlert("Email already taken!", "index.php");
+		else {
+	
+			$fileName = $_FILES['myfile']['name'];
+			$filetype = $_FILES["myfile"]["type"];
+			$filesize = $_FILES["myfile"]["size"];
+			$tempName = $_FILES['myfile']['tmp_name'];
+	
+			if(isset($fileName))
+			{
+				if(!empty($fileName))
+				{
+	
+					if (!file_exists("images/".$email)) 
+					{
+						mkdir("images/".$email);
+					}
+	
+					$finaldir = "images/".$email."/";
+	
+					$location = $finaldir;
+	
+					if(move_uploaded_file($tempName, $location.$fileName))
+					{
+						//echo 'File Uploaded';
+					}
+					else {
+						//echo 'File Not Uploaded';
+					}
+	
+					$idcard = $location.$fileName;
+				}
+			}
+	
+			$sql2 = "INSERT INTO accounts(fname,mname,lname,email,password,idcard,contactnumber,address,status) VALUES ('$fname','$mname','$lname','$email','$pass','$idcard','$contact','$address','1')";
+			// $sql2 = "INSERT INTO accounts(fname,mname,lname,email,password,idcard,contactnumber,address,position,status) VALUES ('$fname','$mname','$lname','$email','$pass','$idcard','$bspermit','$contact','$address','$position','1')";
+			$result = mysqli_query($cn,$sql2);
+	
+			// function myAlert1($msg, $url){
+			// echo '<script language="javascript">alert("'.$msg.'");</script>';
+			// echo "<script>document.location = '$url'</script>";
+			// }
+			// myAlert1("Registered Successfully! You can now login.", "index.php");
+			// $_SESSION['success'] = " Wow! Registered Successfully! You can now login.";
+			// header('Location: index.php');
+			$_SESSION['status'] = "Good job";
+			$_SESSION['status_text'] = "Registered Successfully Completed! You can now login.";
+			$_SESSION['status_code'] = "success";
+			header('Location: index.php');
+		}
+	  }
+	
 	}
 	else {
-
-		$fileName = $_FILES['myfile']['name'];
-		$filetype = $_FILES["myfile"]["type"];
-		$filesize = $_FILES["myfile"]["size"];
-	    $tempName = $_FILES['myfile']['tmp_name'];
-
-	    if(isset($fileName))
-	    {
-	        if(!empty($fileName))
-	        {
-
-	    		if (!file_exists("images/".$email)) 
-	    		{
-				    mkdir("images/".$email);
-				}
-
-				$finaldir = "images/".$email."/";
-
-	        	$location = $finaldir;
-
-	            if(move_uploaded_file($tempName, $location.$fileName))
-	            {
-	                //echo 'File Uploaded';
-	            }
-	            else {
-	            	//echo 'File Not Uploaded';
-	            }
-
-	            $idcard = $location.$fileName;
-	        }
-	    }
-
-		$sql2 = "INSERT INTO accounts(fname,mname,lname,email,password,idcard,contactnumber,address,status) VALUES ('$fname','$mname','$lname','$email','$pass','$idcard','$contact','$address','1')";
-		// $sql2 = "INSERT INTO accounts(fname,mname,lname,email,password,idcard,contactnumber,address,position,status) VALUES ('$fname','$mname','$lname','$email','$pass','$idcard','$bspermit','$contact','$address','$position','1')";
-		$result = mysqli_query($cn,$sql2);
-
-		function myAlert1($msg, $url){
-		echo '<script language="javascript">alert("'.$msg.'");</script>';
-		echo "<script>document.location = '$url'</script>";
-		}
-		myAlert1("Registered Successfully! You can now login.", "index.php");
+		// function myAlert1($msg, $url){
+		// echo '<script language="javascript">alert("'.$msg.'");</script>';
+		// echo "<script>document.location = '$url'</script>";
+		// }
+		// myAlert1("Password and confirm password does not match!", "index.php");
+			// $_SESSION['success'] = "Password and confirm password does not match!";
+			// header('Location: index.php');
+	
+			$_SESSION['status'] = "Good job";
+			$_SESSION['status_text'] = "Password and confirm password does not match!";
+			$_SESSION['status_code'] = "error";
+			header('Location: index.php');
 	}
-}
-else {
-	function myAlert1($msg, $url){
-	echo '<script language="javascript">alert("'.$msg.'");</script>';
-	echo "<script>document.location = '$url'</script>";
-	}
-	myAlert1("Password and confirm password does not match!", "index.php");
-}
-
-
+	
+	
 
 
 ?>

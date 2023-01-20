@@ -1,5 +1,5 @@
 <?php   
-session_start();
+// session_start();
 include 'condb.php';
 ?> 
 <title>Barangay Zone 1 Bulan Sorsogon | Home</title>
@@ -47,6 +47,7 @@ include 'condb.php';
                                 <!-- <a class="btn-popup" data-toggle="modal" data-target="#signupModule">Login/Signup</a> -->
                                 
 
+                                <!-- <div class="modal register-login-modal fade" tabindex="-1" role="dialog" id="signupModule"> -->
                                 <div class="modal register-login-modal fade" tabindex="-1" role="dialog" id="signupModule">
                                     <div class="modal-dialog modal-lg" role="document">
                                         <div class="modal-content">
@@ -61,7 +62,20 @@ include 'condb.php';
                                             <!--Login Module-->
                                             <div class="tab-content" style="width:1000px;margin-left: -330px;">
                                                 <div class="tab-pane fade in active" id="login">
+                                                <!-- <div class="tab-pane fade in active" id="login"> -->
                                                     <div class="signup-form-container text-center">
+                                                    <!-- notification message -->
+                                                    <!-- <?php if (isset($_SESSION['success'])) : ?>
+                                                        <div class="container-fluid mb-10" >
+                                                            <h3 class="alert alert-info"style="font-size: 20px; width: 100%;">
+                                                                <?php 
+                                                                    echo $_SESSION['success']; 
+                                                                    unset($_SESSION['success']);
+                                                                ?>
+                                                            </h3>
+                                                        </div>
+                                                        <?php endif ?> -->
+                                                        
                                                         <form class="mb-0" method="post" action="funcLogin.php">
 
                                                             <div class="form-group">
@@ -70,7 +84,7 @@ include 'condb.php';
                                                             <div class="form-group">
                                                                 <input type="password" class="form-control" name="password" id="login-password" placeholder="Password">
                                                             </div>
-                                                            <input type="submit" class="btn btn--primary btn--block" value="Sign In">
+                                                            <input type="submit" class="btn btn--primary btn--block" name="submit" value="Sign In">
                                                             <a href="forgot.php" class="forget-password">Forget your password?</a>
                                                         </form>
                                                     </div>
@@ -88,7 +102,7 @@ include 'condb.php';
                                                             <input type="text" class="form-control" name="lname" id="full-name" style="text-transform:capitalize;width: 33.5%;display: inline" placeholder="Last Name" required="required">
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="text" class="form-control" name="address" id="full-address" style="text-transform:capitalize;width: 49.5%;display: inline" placeholder="Barangay Purok" required="required">
+                                                            <input type="disabled" class="form-control" name="address" id="full-address" style="text-transform:capitalize;width: 49.5%;display: inline" value="Barangay Zone 1" required="required" >
                                                             <input type="tel" pattern="[0-9]{11}" class="form-control" name="contact" id="contact" style="text-transform:capitalize;width: 50%;display: inline" placeholder="Contact Number" required="required">
                                                         </div>
                                                         <div class="form-group">
@@ -133,3 +147,4 @@ include 'condb.php';
             
                 <!-- Vlidate password -->
                 <script src="validatepass.js"></script>
+                <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>

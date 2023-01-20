@@ -34,36 +34,21 @@
 				<div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="slider--content">
 						<div class="text-center" style="margin-top: -110px;">
-
-							<!-- <div class="form-box search-properties">
-								<div class="row"><br>
-									<div class="col-xs-12 col-sm-6 col-md-12">
-										<div class="form-group">
-											<div class="select--box">
-												<?php
-
-												$res = mysqli_query($cn, "SELECT COUNT(*) AS totalmale FROM residents WHERE gender='Male'");
-												$val = mysqli_fetch_array($res); 
-
-												$resu = mysqli_query($cn, "SELECT COUNT(*) AS totalfemale FROM residents WHERE gender='Female'");
-												$val2 = mysqli_fetch_array($resu); 
-
-												echo '
-												<div>
-														<h4>Total Number of Male Residents</h3>
-														<h5>'.$val[0].'</h4>
-														
-														<h4>Total Number of Female Residents</h3>
-														<h5>'.$val2[0].'</h4>
-												</div>';
-
-
-												?>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div> -->
+						<?php
+							if(isset($_SESSION['status']) && $_SESSION['status'])
+							?>
+								<script>
+									swal({
+										title: "<?php echo $_SESSION['status']?>",
+										text: "<?php echo $_SESSION['status_text']?>",
+										icon: "<?php echo $_SESSION['status_code'];?>",
+										button: "OK",
+									});
+								</script>
+							<?php
+							unset($_SESSION['status']);
+							?>
+		
 							<!-- TOTAL OF OFFICIALS, RESIDENTS, USERS -->
 							<?php include 'total_cards.php' ?>
 						</div>
@@ -103,7 +88,7 @@
 <script src="assets/js/plugins.js"></script>
 <script src="assets/js/functions.js"></script>
 <script src="assets/loadGeo.js"></script>
-
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 
 <script>
