@@ -16,7 +16,7 @@ include ('../condb.php');
 			
 		}else {
 			$_SESSION['status'] = "Error";
-			$_SESSION['status_text'] = "Record is not to added to archive.";
+			$_SESSION['status_text'] = "Record is not added to archive.";
 			$_SESSION['status_code'] = "error";
 			header('Location: officials.php');
 		}

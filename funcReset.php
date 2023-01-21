@@ -20,19 +20,28 @@ if($row<>0)
 	{
 		$sql2 = "UPDATE accounts SET password='$randomizer' WHERE email='$email'";
 		$result = mysqli_query($cn,$sql2);
+		$_SESSION['status'] = "Success";
+		$_SESSION['status_text'] = "Your new password is ". $randomizer ."";
+		$_SESSION['status_code'] = "success";
+		header('Location: index.php');
 
-		function myAlert1($msg, $url){
-		echo '<script language="javascript">alert("'.$msg.'");</script>';
-		echo "<script>document.location = '$url'</script>";
-		}
-		myAlert1("Your new password is ". $randomizer ."", "index.php");
+		// function myAlert1($msg, $url){
+		// echo '<script language="javascript">alert("'.$msg.'");</script>';
+		// echo "<script>document.location = '$url'</script>";
+		// }
+		// myAlert1("Your new password is ". $randomizer ."", "index.php");
 	}
 	else
 	{
-		function myAlert1($msg, $url){
-			echo '<script language="javascript">alert("'.$msg.'");</script>';
-			echo "<script>document.location = '$url'</script>";
-			}
-			myAlert1("Information does not match.", "index.php");
+		$_SESSION['status'] = "Error";
+		$_SESSION['status_text'] = "Data is not deleted.";
+		$_SESSION['status_code'] = "error";
+		header('Location: index.php');
+
+		// function myAlert1($msg, $url){
+		// 	echo '<script language="javascript">alert("'.$msg.'");</script>';
+		// 	echo "<script>document.location = '$url'</script>";
+		// 	}
+		// 	myAlert1("Information does not match.", "index.php");
 		}
 	// }

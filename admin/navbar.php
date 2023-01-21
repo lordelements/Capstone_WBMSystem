@@ -55,7 +55,9 @@ if($_SESSION['email'] == ""){
                                     <ul class="dropdown-menu">
                                         <li><a href="viewAccount.php">View Account</a></li>
                                         <li><a href="../index.php">Logout</a></li>
-                                        <!-- <li><a href="brgyinfo.php">Barangay Info</a></li> -->
+                                        <li>
+                                            <a href="../dbdownload.php">Backup</a>
+                                        </li>
                                     </ul>
                                 </li> 
 

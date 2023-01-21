@@ -22,6 +22,13 @@ $contact = $_POST['contact'];
 
 $full = $lastname . " " . $middlename . " " . $firstname;
 
+$min_total = 1; // minimum total amount for an account to be stored in the database
+$min_kagawad = 7; // minimum total amount for kagawad position to be stored in the database is 7
+// $min_secretary = 1;
+// $min_treasurer = 1;
+// $min_skchairman = 1;
+
+
 
 $res = mysqli_query($cn, "SELECT lastname, middlename, firstname  FROM officials
  where firstname = '$firstname',  middlename = '$middlename',  firstname = '$middlename'");
@@ -66,26 +73,52 @@ if($res && mysqli_num_rows($res)>0)
             $idcard = $loc.$fileName;
         }
         
-        $res = mysqli_query($cn, "INSERT INTO officials (position, lastname, middlename, firstname, gender, birthdate, civilstatus, address, idcard, contact,termyears,yearstarted, status) VALUES ('$position','$lastname','$middlename','$firstname','$gender','$birthdate','$civilstatus','$address','$idcard','$contact','$termyears','$yearstarted','0')");
-		$_SESSION['status'] = "Success";
-		$_SESSION['status_text'] = "Barangay Official is added.";
-		$_SESSION['status_code'] = "success";
-		header('Location: ../admin/officials.php');
+		$res = mysqli_query($cn, "INSERT INTO officials (position, lastname, middlename, firstname, gender, birthdate, civilstatus, address, idcard, contact,termyears,yearstarted, status) VALUES ('$position','$lastname','$middlename','$firstname','$gender','$birthdate','$civilstatus','$address','$idcard','$contact','$termyears','$yearstarted','0')");
+			$_SESSION['status'] = "Success";
+			$_SESSION['status_text'] = "Barangay Official is added.";
+			$_SESSION['status_code'] = "success";
+			header('Location: officials.php');
+
+		
+		// if ($position  <= $min_total) {
+		// 	$query = "SELECT position FROM officilas WHERE position = 'Punong Barangay'";
+		// 	$result = mysqli_query($cn, $query);
+		// 	$_SESSION['status'] = "Error";
+		// 	$_SESSION['status_text'] = "The minimum position must not exceed to $min_total.";
+		// 	$_SESSION['status_code'] = "error";
+		// 	header('Location: officials.php');
+	
+		// }
+		// else{
+		// 	$res = mysqli_query($cn, "INSERT INTO officials (position, lastname, middlename, firstname, gender, birthdate, civilstatus, address, idcard, contact, termyears, yearstarted, status) VALUES ('$position','$lastname','$middlename','$firstname','$gender','$birthdate','$civilstatus','$address','$idcard','$contact','$termyears','$yearstarted','0')");
+		// 	$_SESSION['status'] = "Success";
+		// 	$_SESSION['status_text'] = "Barangay Official is added.";
+		// 	$_SESSION['status_code'] = "success";
+		// 	header('Location: officials.php');
+		// }
+		
+		
+		// $query = "SELECT position FROM officilas WHERE position = 'Barangay Kagawad'";
+		// $result = mysqli_query($cn, $query);	
+		// if ($position < $min_kagawad) {
+		// 	$_SESSION['status'] = "Error";
+		// 	$_SESSION['status_text'] = "The minimum position of kagawad not exceed to $min_kagawad.";
+		// 	$_SESSION['status_code'] = "error";
+		// 	header('Location: officials.php');
+
+		// }
+		// else{
+		// 	$res = mysqli_query($cn, "INSERT INTO officials (position, lastname, middlename, firstname, gender, birthdate, civilstatus, address, idcard, contact,termyears,yearstarted, status) VALUES ('$position','$lastname','$middlename','$firstname','$gender','$birthdate','$civilstatus','$address','$idcard','$contact','$termyears','$yearstarted','0')");
+		// 	$_SESSION['status'] = "Success";
+		// 	$_SESSION['status_text'] = "Barangay Official is added.";
+		// 	$_SESSION['status_code'] = "success";
+		// 	header('Location: officials.php');
+		// }
 	
      }
-    //  elseif () {
-    //     # code...
-    //  }
+   
 
-     else {
-        
-		$_SESSION['status'] = "Good job";
-		$_SESSION['status_text'] = "Record not added.";
-		$_SESSION['status_code'] = "error";
-		header('Location: index.php');
-     }
-
-    }
+}
     
 
     // $res = mysqli_query($cn, "INSERT INTO officials (position, lastname, middlename, firstname, gender, birthdate, civilstatus, address, idcard, contact,termyears,yearstarted, status) VALUES ('$position','$lastname','$middlename','$firstname','$gender','$birthdate','$civilstatus','$address','$idcard','$contact','$termyears','$yearstarted','0')");
