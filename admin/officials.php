@@ -28,27 +28,7 @@
 		</nav>
 	</header>
 		<section id="heroSearch" class="hero-search mtop-0 pt-0 pb-0">
-			<?php
-			if(isset($_SESSION['status']) && $_SESSION['status'])
-			?>
-				<script>
-					swal({
-						title: "<?php echo $_SESSION['status']?>",
-						text: "<?php echo $_SESSION['status_text']?>",
-						icon: "<?php echo $_SESSION['status_code'];?>",
-						button: "OK",
-					});
-					// swal({
-					// title: "Good job!",
-					// text: "You clicked the button!",
-					// icon: "success",
-					// button: "Aww yiss!",
-					// });
-				</script>
-			<?php
-			unset($_SESSION['status']);
-			?>
-		
+			
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12">
@@ -61,7 +41,7 @@
 											<div class="select--box">
 												<!-- <input type="text" name="position" class="form-control" id="select-position" placeholder="Position" required> -->
 												<i class="fa fa-angle-down"></i>
-												<select name="position" id="select-positon">
+												<select name="position" id="select-positon" required>
 													<option>Select Position</option>
 													<option value="Punong Barangay">Punong Barangay</option>
 													<option value="Barangay Kagawad">Barangay Kagawad</option>
@@ -82,7 +62,7 @@
 									<div class="col-xs-12 col-sm-6 col-md-4">
 										<div class="form-group">
 											<div class="select--box">
-												<input type="text" name="middlename" class="form-control" id="select-location" placeholder="Middle Name">
+												<input type="text" name="middlename" class="form-control" id="select-location" placeholder="Middle Name" required>
 											</div>
 										</div>
 									</div>
@@ -97,7 +77,7 @@
 										<div class="form-group">
 											<div class="select--box">
 												<i class="fa fa-angle-down"></i>
-												<select name="gender" id="select-gender">
+												<select name="gender" id="select-gender" required>
 													<option>Gender</option>
 													
 													<option>Male</option>
@@ -110,7 +90,7 @@
 									<div class="col-xs-12 col-sm-6 col-md-6">
 										<div class="form-group">
 											<div class="select--box">
-												<input type="date" name="birthdate" class="form-control" id="select-birthdate" placeholder="Birthdate">
+												<input type="date" name="birthdate" class="form-control" id="select-birthdate" placeholder="Birthdate" required>
 											</div>
 										</div>
 									</div>
@@ -118,7 +98,7 @@
 										<div class="form-group">
 											<div class="select--box">
 												<i class="fa fa-angle-down"></i>
-												<select name="civilstatus" id="select-type">
+												<select name="civilstatus" id="select-type" required>
 													<option>Civil Status</option>
 													<option>Single</option>
 													<option>Married</option>
@@ -153,14 +133,14 @@
 									<div class="col-xs-12 col-sm-6 col-md-6">
 										<div class="form-group">
 											<div class="select--box">
-												<p style="display:inline;">Years of Term</p><input type="number" name="termyears" class="form-control" id="select-termyears" placeholder="0">
+												<p style="display:inline;">Years of Term</p><input type="number" name="termyears" class="form-control" id="select-termyears" placeholder="0" required>
 											</div>
 										</div>
 									</div>
 									<div class="col-xs-12 col-sm-6 col-md-6">
 										<div class="form-group">
 											<div class="select--box">
-												<p style="display:inline;">Year Started</p><input type="text" maxlength="4" pattern="\d{4}" name="yearstarted" class="form-control" id="select-yearstarted" placeholder="2022">
+												<p style="display:inline;">Year Started</p><input type="text" maxlength="4" pattern="\d{4}" name="yearstarted" class="form-control" id="select-yearstarted" placeholder="2022" required>
 											</div>
 										</div>
 									</div>

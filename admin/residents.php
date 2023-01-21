@@ -45,7 +45,7 @@
 									<div class="col-xs-12 col-sm-6 col-md-4">
 										<div class="form-group">
 											<div class="select--box">
-												<input type="text" name="middlename" class="form-control" id="select-location" placeholder="Middle Name">
+												<input type="text" name="middlename" class="form-control" id="select-location" placeholder="Middle Name" required>
 											</div>
 										</div>
 									</div>
@@ -60,7 +60,7 @@
 										<div class="form-group">
 											<div class="select--box">
 												<i class="fa fa-angle-down"></i>
-												<select name="gender" id="select-gender">
+												<select name="gender" id="select-gender" required>
 													<option>Gender</option>
 													
 													<option>Male</option>
@@ -73,7 +73,7 @@
 									<div class="col-xs-12 col-sm-6 col-md-4">
 										<div class="form-group">
 											<div class="select--box">
-												<input type="date" name="birthdate" class="form-control" id="select-birthdate" placeholder="Birthdate">
+												<input type="date" name="birthdate" class="form-control" id="select-birthdate" placeholder="Birthdate" required>
 											</div>
 										</div>
 									</div>
@@ -221,6 +221,7 @@
                 	}
                 	echo '</table><br>';
                 	?>
+					
 			</div>
 		</div>
 	</section>

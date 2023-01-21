@@ -1,6 +1,6 @@
 <?php   
 session_start();
-error_reporting(0);
+// error_reporting(0);
 include '../condb.php';
 
 
@@ -58,8 +58,6 @@ if($_SESSION['email'] == ""){
                                         <!-- <li><a href="brgyinfo.php">Barangay Info</a></li> -->
                                     </ul>
                                 </li> 
-
-
 
                             </ul>
                             </div>
@@ -156,4 +154,36 @@ if($_SESSION['email'] == ""){
 -->
 
                 </div>
-            
+                <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+                <!-- <script>
+                    swal({
+                    title: "Good job!",
+                    text: "You clicked the button!",
+                    icon: "success",
+                    button: "Aww yiss!",
+                    });
+                </script> -->
+
+                
+                <?php
+                    if(isset($_SESSION['status']) && $_SESSION['status'])
+                    ?>
+                        <script>
+                            swal({
+                            	title: "<?php echo $_SESSION['status']?>",
+                            	text: "<?php echo $_SESSION['status_text']?>",
+                            	icon: "<?php echo $_SESSION['status_code'];?>",
+                            	button: "OK",
+                            });
+                            // swal({
+                            // title: "Good job!",
+                            // text: "You clicked the button!",
+                            // icon: "success",
+                            // button: "Aww yiss!",
+                            // });
+                    
+                        </script>
+                    <?php
+                    unset($_SESSION['status']);
+                ?>
+                

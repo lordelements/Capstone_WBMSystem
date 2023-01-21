@@ -16,13 +16,30 @@ $witness2 = $_POST['witness2'];
 $narrative = $_POST['narrative'];
 $dateandtime = $_POST['dateandtime'];
 
-$res = mysqli_query($cn, "UPDATE reports SET incident='$incident', incidentplace='$incidentplace', complainant='$complainant', complainee='$complainee', witness1='$witness1', witness2='$witness2', narrative='$narrative', dateandtime='$dateandtime'WHERE reportid='$repid'");
-	
-	function myAlert($msg, $url)
-	{
-    echo '<script language="javascript">alert("'.$msg.'");</script>';
-    echo "<script>document.location = '$url'</script>";
-	}
-	myAlert("Report updated successfully!", "reports.php");
+$query = "UPDATE reports SET incident='$incident', incidentplace='$incidentplace', complainant='$complainant', complainee='$complainee', witness1='$witness1', witness2='$witness2', narrative='$narrative', dateandtime='$dateandtime'WHERE reportid='$repid'";
+$result = mysqli_query($cn,$query);
 
+$min_length = 40; // minimum length of word to be stored in database
+if (strlen($narrative) >= $min_length) {
+	if ($result === true) {
+		$_SESSION['status'] = "Success";
+		$_SESSION['status_text'] = "Report updated successfully!";
+		$_SESSION['status_code'] = "success";
+		header('Location: reports.php');
+	}
+	else {
+		$_SESSION['status'] = "Error";
+		$_SESSION['status_text'] = "Record not updated!";
+		$_SESSION['status_code'] = "error";
+		header('Location: reports.php');
+	}
+
+} else {
+	$_SESSION['status'] = "Error";
+	$_SESSION['status_text'] = "Word must be at least $min_length characters long.";
+	$_SESSION['status_code'] = "error";
+	header('Location: reports.php');
+}
+
+	
 ?>

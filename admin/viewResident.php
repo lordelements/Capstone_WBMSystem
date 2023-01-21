@@ -55,7 +55,7 @@
 									<div class="col-xs-12 col-sm-6 col-md-4">
 										<div class="form-group">
 											<div class="select--box">
-												<input type="text" name="middlename" class="form-control" id="select-location" value="'.$row['middlename'].'" style="color:black;">
+												<input type="text" name="middlename" class="form-control" id="select-location" value="'.$row['middlename'].'" style="color:black;" required>
 											</div>
 										</div>
 									</div>
@@ -69,14 +69,14 @@
 									<div class="col-xs-12 col-sm-6 col-md-6">
 										<div class="form-group">
 											<div class="select--box">
-												<input type="date" name="birthdate" class="form-control" id="select-birthdate" value="'.$row['birthdate'].'" style="color:black;">
+												<input type="date" name="birthdate" class="form-control" id="select-birthdate" value="'.$row['birthdate'].'" style="color:black;" required>
 											</div>
 										</div>
 									</div>
 									<div class="col-xs-12 col-sm-6 col-md-6">
 										<div class="form-group">
 											<div class="select--box">
-												<input type="text" name="civilstatus" class="form-control" id="select-civilstatus" value="'.$row['civilstatus'].'" style="color:black;">
+												<input type="text" name="civilstatus" class="form-control" id="select-civilstatus" value="'.$row['civilstatus'].'" style="color:black;" required>
 											</div>
 										</div>
 									</div>

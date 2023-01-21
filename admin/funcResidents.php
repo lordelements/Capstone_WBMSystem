@@ -70,15 +70,32 @@ function itexmo($number,$message,$apicode,$passwd)
 
             $idcard = $loc.$fileName;
         }
+		
+		$query = "INSERT INTO residents (lastname, middlename, firstname, gender, birthdate, civilstatus, address, idcard, contact, status) VALUES ('$lastname','$middlename','$firstname','$gender','$birthdate','$civilstatus','$address','$idcard','$contact','0')";
+		$result = mysqli_query($cn,$query);
+
+		if ($result === true) {
+			$_SESSION['status'] = "Success";
+			$_SESSION['status_text'] = "Barangay resident is added.";
+			$_SESSION['status_code'] = "success";
+			header('Location: residents.php');
+		}
+		else {
+			$_SESSION['status'] = "Error";
+			$_SESSION['status_text'] = "Barangay resident is not added.";
+			$_SESSION['status_code'] = "error";
+			header('Location: residents.php');
+		}
     }
 
-$res = mysqli_query($cn, "INSERT INTO residents (lastname, middlename, firstname, gender, birthdate, civilstatus, address, idcard, contact, status) VALUES ('$lastname','$middlename','$firstname','$gender','$birthdate','$civilstatus','$address','$idcard','$contact','0')");
+    // $res = mysqli_query($cn, "INSERT INTO residents (lastname, middlename, firstname, gender, birthdate, civilstatus, address, idcard, contact, status) VALUES ('$lastname','$middlename','$firstname','$gender','$birthdate','$civilstatus','$address','$idcard','$contact','0')");
 	
-	function myAlert($msg, $url)
-	{
-    echo '<script language="javascript">alert("'.$msg.'");</script>';
-    echo "<script>document.location = '$url'</script>";
-	}
-	myAlert("Record added successfully!", "../admin/residents.php");
+	
+	// function myAlert($msg, $url)
+	// {
+    // echo '<script language="javascript">alert("'.$msg.'");</script>';
+    // echo "<script>document.location = '$url'</script>";
+	// }
+	// myAlert("Record added successfully!", "../admin/residents.php");
 
 ?>

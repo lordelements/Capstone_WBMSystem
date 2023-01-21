@@ -11,13 +11,17 @@
     $officialid=$_GET['delOff_id'];
     $sql = "DELETE FROM officials WHERE officialid= $officialid";
     $result = $cn->query($sql);
-    echo "<script>alert('Officials is successfully deleted.')</script>";
+    $_SESSION['status'] = "Success";
+    $_SESSION['status_text'] = "Officials is successfully deleted!";
+    $_SESSION['status_code'] = "success";
     header('Location: officials.php');
-   //  return $result;
 
    }
    else {
-    echo "<script>alert('Data is not deleted.')</script>";
+    $_SESSION['status'] = "Success";
+    $_SESSION['status_text'] = "Data is not deleted.";
+    $_SESSION['status_code'] = "success";
+    header('Location: officials.php');
    }
 
 

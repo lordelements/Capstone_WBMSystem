@@ -47,9 +47,9 @@
 									<div class="col-xs-12 col-sm-6 col-md-12">
 										<div class="form-group">
 											<div class="select--box">
-												<select name="position" id="select-positon" value="'.$row['position'].'">
-												<option>Select Position</option>
-													<option value="Punong Barangay">Punong Barangay</option>
+												<select name="position" id="select-positon" value="'.$row['position'].'" >
+												<option required>Select Position</option>
+													<option value="Punong Barangay" required>Punong Barangay</option>
 													<option value="Barangay Kagawad">Barangay Kagawad</option>
 													<option value="Barangay Secretary">Barangay Secretary</option>
 													<option value="Barangay Treasurer">Barangay Treasurer</option>
@@ -68,7 +68,7 @@
 									<div class="col-xs-12 col-sm-6 col-md-4">
 										<div class="form-group">
 											<div class="select--box">
-												<input type="text" name="middlename" class="form-control" id="select-location" value="'.$row['middlename'].'" style="color:black;">
+												<input type="text" name="middlename" class="form-control" id="select-location" value="'.$row['middlename'].'" style="color:black;" required>
 											</div>
 										</div>
 									</div>
@@ -82,14 +82,14 @@
 									<div class="col-xs-12 col-sm-6 col-md-4">
 										<div class="form-group">
 											<div class="select--box">
-												<input type="date" name="birthdate" class="form-control" id="select-birthdate" value="'.$row['birthdate'].'" style="color:black;">
+												<input type="date" name="birthdate" class="form-control" id="select-birthdate" value="'.$row['birthdate'].'" style="color:black;" required>
 											</div>
 										</div>
 									</div>
 									<div class="col-xs-12 col-sm-6 col-md-4">
 										<div class="form-group">
 											<div class="select--box">
-												<input type="text" name="civilstatus" class="form-control" id="select-civilstatus" value="'.$row['civilstatus'].'" style="color:black;">
+												<input type="text" name="civilstatus" class="form-control" id="select-civilstatus" value="'.$row['civilstatus'].'" style="color:black;" required>
 											</div>
 										</div>
 									</div>
@@ -112,14 +112,14 @@
 									<div class="col-xs-12 col-sm-6 col-md-6">
 										<div class="form-group">
 											<div class="select--box">
-												<p style="display:inline;">Years of Term</p><input type="number" name="termyears" class="form-control" id="select-termyears" value="'.$row['termyears'].'" style="color:black;" >
+												<p style="display:inline;">Years of Term</p><input type="number" name="termyears" class="form-control" id="select-termyears" value="'.$row['termyears'].'" style="color:black;" required>
 											</div>
 										</div>
 									</div>
 									<div class="col-xs-12 col-sm-6 col-md-6">
 										<div class="form-group">
 											<div class="select--box">
-												<p style="display:inline;">Year Started</p><input type="text" maxlength="4" pattern="\d{4}" name="yearstarted" class="form-control" id="select-yearstarted" value="'.$row['yearstarted'].'" style="color:black;">
+												<p style="display:inline;">Year Started</p><input type="text" maxlength="4" pattern="\d{4}" name="yearstarted" class="form-control" id="select-yearstarted" value="'.$row['yearstarted'].'" style="color:black;" required>
 											</div>
 										</div>
 									</div>
