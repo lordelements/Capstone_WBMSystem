@@ -1,10 +1,10 @@
 <?php
-
+session_start();
 include ('../condb.php');
 
 $id = $_GET['id'];
 
-	$sql2 = "UPDATE reports SET status='0' WHERE officialid='$id'";
+	$sql2 = "UPDATE reports SET status='0' WHERE reportid='$id'";
 	$result = mysqli_query($cn,$sql2);
 
 	if ($result === true) {
