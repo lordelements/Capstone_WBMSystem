@@ -13,6 +13,10 @@
 		<link href="assets/css/external.css" rel="stylesheet">
 		<link href="assets/css/bootstrap.min.css" rel="stylesheet">
 		<link href="assets/css/style.css" rel="stylesheet">
+
+		<link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 		<!--[if lt IE 9]>
 		<script src="assets/js/html5shiv.js"></script>
 		<script src="assets/js/respond.min.js"></script>
@@ -31,7 +35,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12">
-					<div class="slider--content">
+					<div class="slider--content" data-aos="fade-down">
 						<form class="mb-0" method="post" action="funcResidents.php" enctype="multipart/form-data">
 							<div class="form-box search-properties">
 								<div class="row"><br>
@@ -142,7 +146,7 @@
 		</div>
 	</section>
 	<section id="properties-carousel" class="properties-carousel pt-90 pb-90">
-		<div class="container">
+		<div class="container" data-aos="fade-up">
 			<div class="row">
 				<center><h5>Residents List</h5>
 			Search: <input id="myInput" class="form-control" style="display:inline;width: 50%;" type="text" placeholder="Search by ID, Name, Address, Contact Number, and etc."></center><br>
@@ -157,7 +161,7 @@
                         "
                         <div class='container' style='width:1500px;margin-left:-130px'>
 							<form method='POST' action='exportResidents.php'>
-								<input type='submit' value='Export-excel' class='btn btn-success'>
+								<input type='submit' value='Export-excel' name='export_excel_btn' class='btn btn-success'>
 							</form>
                         <table class='table table-striped table-hover'>
                         <thead>
@@ -199,23 +203,24 @@
 
                                 if ($row['status'] == "0")
                                 {
-                                	$stat = "Active";
+                                	$stat = "Active residents";
                                 }
                                 else {
-                                	$stat = "Archived";
+                                	$stat = "Not Active residents";
                                 }
 
                                 echo "<td>" . $stat . "</td> ";
                                 // echo "<td><a target='_blank' class='btn btn-light' style='width:100%;border:1px solid black;color:black' href='".$row['idcard']."'>View Image</a></td> ";
 
-                                echo "<td><a class='btn btn-success' style='width:49%;border:1px solid black;color:black' href='viewResident.php?id=" . $row['residentid'] . "'>Edit</a> ";
+                                echo "<td><a class='btn btn-success' style='width:20%;border:1px solid black;color:black' href='viewResident.php?id=" . $row['residentid'] . "'><i class='fa fa-edit'></i></a>
+								<a class='btn btn-danger' style='width:20%;border:1px solid black;color:black'href='delresidents.php?delRes_id=" . $row['residentid'] . "'><i class='fa fa-trash'></i></a>";
 
                                 if ($row['status'] == "0")
                                 {
-                                	echo "<a class='btn btn-warning' style='width:49%;border:1px solid black;color:black' href='archiveResidents.php?id=" . $row['residentid'] . "'>Archive</a></td> ";
+                                	echo "<a class='btn btn-warning' style='width:49%;border:1px solid black;color:black' href='archiveResidents.php?id=" . $row['residentid'] . "'>Active</a></td> ";
                                 }
                                 else {
-                                	echo "<a class='btn btn-warning' style='width:49%;border:1px solid black;color:black' href='activateResidents.php?id=" . $row['residentid'] . "'>Restore</a></td> ";
+                                	echo "<a class='btn btn-warning' style='width:49%;border:1px solid black;color:black' href='activateResidents.php?id=" . $row['residentid'] . "'>Disactive</a></td> ";
                                 }
 
                 	}
@@ -273,6 +278,9 @@
 </script>
 
 
+<script>
+    AOS.init();
+</script>
 </body>
 <!-- index Sun, 18 Jul 2021 09:33:18 GMT -->
 </html>

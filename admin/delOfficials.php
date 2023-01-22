@@ -32,11 +32,16 @@
  // delete
  if (isset($_GET['delOff_id']) && !empty($_GET['delOff_id'])){
     $officialid=$_GET['delOff_id'];
+    	$query=mysqli_query($cn, "SELECT * FROM `officials` WHERE `delOff_id` = '$delOff_id'");
+		$fetch=mysqli_fetch_array($query);
 
+    $query = mysqli_query($cn, "INSERT INTO `trash` VALUES('', '$fetch[delOff_id]', '$fetch[position]', '$fetch[firstname]', '$fetch[middlename]',
+   '$fetch[lastname]', '$fetch[gender]', '$fetch[birthdate]', '$fetch[civilstatus]', 
+   '$fetch[address]', '$fetch[contact]', '$fetch[termyears]', '$fetch[yearstarted]', '$fetch[status]',)");
     $sql = "DELETE FROM officials WHERE officialid= $officialid";
     $result = $cn->query($sql);
     $_SESSION['status'] = "Success";
-    $_SESSION['status_text'] = "Officials is successfully deleted!";
+    $_SESSION['status_text'] = "Officials record is successfully deleted!";
     $_SESSION['status_code'] = "success";
     header('Location: officials.php');
 

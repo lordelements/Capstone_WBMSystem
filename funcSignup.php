@@ -26,13 +26,7 @@ if($pass == $conpass){
 	} else {
 		if($res && mysqli_num_rows($res)>0)
 		{
-			  // function myAlert($msg, $url)
-			// {
-			// echo '<script language="javascript">alert("'.$msg.'");</script>';
-			// echo "<script>document.location = '$url'</script>";
-			// }
-			// myAlert("Email already taken!", "index.php");
-	
+		
 			$_SESSION['status'] = "Error";
 			$_SESSION['status_text'] = "Email already taken!";
 			$_SESSION['status_code'] = "error";
@@ -75,15 +69,8 @@ if($pass == $conpass){
 			// $sql2 = "INSERT INTO accounts(fname,mname,lname,email,password,idcard,contactnumber,address,position,status) VALUES ('$fname','$mname','$lname','$email','$pass','$idcard','$bspermit','$contact','$address','$position','1')";
 			$result = mysqli_query($cn,$sql2);
 	
-			// function myAlert1($msg, $url){
-			// echo '<script language="javascript">alert("'.$msg.'");</script>';
-			// echo "<script>document.location = '$url'</script>";
-			// }
-			// myAlert1("Registered Successfully! You can now login.", "index.php");
-			// $_SESSION['success'] = " Wow! Registered Successfully! You can now login.";
-			// header('Location: index.php');
 			$_SESSION['status'] = "Good job";
-			$_SESSION['status_text'] = "Registered Successfully Completed! You can now login.";
+			$_SESSION['status_text'] = "Registered Successfully Completed!" ."<br>". " You can now login.";
 			$_SESSION['status_code'] = "success";
 			header('Location: index.php');
 		}
@@ -91,15 +78,8 @@ if($pass == $conpass){
 	
 	}
 	else {
-		// function myAlert1($msg, $url){
-		// echo '<script language="javascript">alert("'.$msg.'");</script>';
-		// echo "<script>document.location = '$url'</script>";
-		// }
-		// myAlert1("Password and confirm password does not match!", "index.php");
-			// $_SESSION['success'] = "Password and confirm password does not match!";
-			// header('Location: index.php');
-	
-			$_SESSION['status'] = "Good job";
+		
+			$_SESSION['status'] = "Error";
 			$_SESSION['status_text'] = "Password and confirm password does not match!";
 			$_SESSION['status_code'] = "error";
 			header('Location: index.php');

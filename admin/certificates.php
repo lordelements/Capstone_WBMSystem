@@ -36,7 +36,7 @@
 							<div class="row"><br><br>
 								<div class="column1" style="width:400px;background: white;padding-top:150px;padding-bottom:150px;padding-left:20px;padding-right:20px;border-radius: 10px;display:inline;float:left;margin-left:-30px">
 									<h3 style="color:black">Barangay Certificate</h3><br>
-									<a target='_blank' class='btn btn-light' style='width:100%;border:1px solid black;color:black' href='../brgycert.docx'>Download File</a>
+									<a target='_blank' class='btn btn-light' style='width:100%;border:1px solid black;color:black' href='../Barangay_Certificate.docx'>Download File</a>
 								</div>
 								<div class="column2" style="width:400px;background: white;padding-top:150px;padding-bottom:150px;padding-left:20px;padding-right:20px;border-radius: 10px;display:inline;float:left;margin-left:10px">
 									<h3 style="color:black">Barangay Business Permit</h3><br>

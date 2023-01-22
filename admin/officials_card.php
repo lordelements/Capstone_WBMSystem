@@ -10,28 +10,32 @@
 		<link href="assets/css/style.css" rel="stylesheet">
 </head>
 <body>
+    <table>
     <?php	
 		// $officialid = $_POST['officialid'];
 		$sql = "SELECT * FROM officials";
 		$result = $cn->query($sql);
 
-		
+        $i = 0;
 			while($row = mysqli_fetch_assoc($result))
 				{       
-					$query = mysqli_query($cn, "SELECT * FROM officials");
+					$query = mysqli_query($cn, "SELECT * FROM officials ORDER BY 'officialid' DESC");
 					$disp = mysqli_fetch_assoc($query);
 
-	?>
+                    if ($i%4 == 0) {
+                       echo"<tr>";
+                    }
 
-    <div class="row">
-        <div class="column">
-            <div class="card">
-            <?php echo "<img src='../images/".$row['idcard']." 'width=300px; height=300px;  border-radius=5px; alt=''>";?>
-            </div>
-        </div>
-    </div>
-        
-<?php }?>
+                    echo "<img src='../images/".$row['idcard']." 'width=300px; height=300px;  border-radius=5px; alt=''>";
+
+                    if ($i%4 == 5) {
+                       echo"</tr>";
+                    }
+                    $i++;
+                }
+	?>
+   </table>
+   
     
     <style>
         :root {

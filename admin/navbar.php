@@ -5,6 +5,11 @@ include '../condb.php';
 
 
 if($_SESSION['email'] == ""){
+    // $_SESSION['status'] = "Error";
+    // $_SESSION['status_text'] = "Please login to use the system!";
+    // $_SESSION['status_code'] = "error";
+    // header('Location: ../index.php');
+
     function myAlert1($msg, $url){
     echo '<script language="javascript">alert("'.$msg.'");</script>';
     echo "<script>document.location = '$url'</script>";

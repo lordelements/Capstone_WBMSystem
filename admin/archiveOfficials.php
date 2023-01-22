@@ -10,13 +10,13 @@ include ('../condb.php');
 		if ($result === true) {
 			
 			$_SESSION['status'] = "Success";
-			$_SESSION['status_text'] = "Record is added to archive.";
+			$_SESSION['status_text'] = "Not active official.";
 			$_SESSION['status_code'] = "success";
 			header('Location: officials.php');	
 			
 		}else {
 			$_SESSION['status'] = "Error";
-			$_SESSION['status_text'] = "Record is not added to archive.";
+			$_SESSION['status_text'] = "Record is not added.";
 			$_SESSION['status_code'] = "error";
 			header('Location: officials.php');
 		}

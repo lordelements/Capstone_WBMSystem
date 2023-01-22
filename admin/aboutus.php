@@ -13,10 +13,10 @@
 		<link href="assets/css/external.css" rel="stylesheet">
 		<link href="assets/css/bootstrap.min.css" rel="stylesheet">
 		<link href="assets/css/style.css" rel="stylesheet">
-		<!--[if lt IE 9]>
-		<script src="assets/js/html5shiv.js"></script>
-		<script src="assets/js/respond.min.js"></script>
-		<![endif]-->
+		
+		<link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	</head>
 	<body>
@@ -67,11 +67,14 @@
 		</div>
 	</section>
 	<section id="properties-carousel" class="properties-carousel pt-90 pb-90">
-		<div class="container mt-50">
+		<div class="container mt-50 mb-15" data-aos="fade-up">
 			<!-- <?php
 				include 'officials_card.php';
 			?> -->
-			<div class="row">
+			<br>
+			<br>
+			<br>
+			<div class="row mt-10">
 				<h1>Location</h1>
 				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1376.3053039834626!2d123.8753769749101!3d12.662473739238814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a0d6b0a1d8fb9d%3A0x38f686ccf365e88a!2sHaylo%20Street%2C%20Bulan%2C%20Sorsogon!5e0!3m2!1sen!2sph!4v1670843880423!5m2!1sen!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 			</div>
@@ -80,10 +83,11 @@
 		</div>
 	</section>
 	
+
 	<div class="container mb-10">
 	<div class="row bg-overlay bg-overlay-dark3">
-		<h1>Barangay Zone 1 Bulan Sorsogon</h1> 
-		<img src="brgyinfobg.jpg" style="height: 500px; width: 100%; border-radius: 5px;">
+		<h1 data-aos="fade-rigth">Barangay Zone 1 Bulan Sorsogon</h1> 
+		<img src="brgyinfobg.jpg" data-aos="fade-up" style="height: 500px; width: 100%; border-radius: 5px;">
 	</div>
 	<!-- <?php	
 		$brgyid = $_POST['brgyid'];
@@ -152,6 +156,7 @@
 		}
 	}
 
+	AOS.init();
 </script>
 
 

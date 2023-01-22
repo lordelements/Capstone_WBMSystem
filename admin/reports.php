@@ -13,10 +13,10 @@
 		<link href="assets/css/external.css" rel="stylesheet">
 		<link href="assets/css/bootstrap.min.css" rel="stylesheet">
 		<link href="assets/css/style.css" rel="stylesheet">
-		<!--[if lt IE 9]>
-		<script src="assets/js/html5shiv.js"></script>
-		<script src="assets/js/respond.min.js"></script>
-		<![endif]-->
+		
+		<link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	</head>
 	<body>
@@ -32,12 +32,12 @@
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="slider--content">
-						<form class="mb-0" method="post" action="funcReports.php" enctype="multipart/form-data">
+						<form class="mb-0" data-aos="fade-down"  method="post" action="funcReports.php" enctype="multipart/form-data">
 							<div class="form-box search-properties">
 								<div class="row"><br>
 									<div class="col-xs-12 col-sm-6 col-md-4">
 										<div class="form-group">
-											<div class="select--box">
+											<div class="select--box" data-aos="fade-right">
 												<input type="text" name="incident" class="form-control" id="select-incident" placeholder="Incident" required>
 											</div>
 										</div>
@@ -120,7 +120,7 @@
 		</div>
 	</section>
 	<section id="properties-carousel" class="properties-carousel pt-90 pb-90">
-		<div class="container">
+		<div class="container" data-aos="fade-up">
 			<div class="row">
 				<center><h5>Reports List</h5>
 			Search: <input id="myInput" class="form-control" style="display:inline;width: 50%;" type="text" placeholder="Search by ID, Name, Address, Contact Number, and etc."></center><br>
@@ -175,22 +175,23 @@
 
                                 if ($row['status'] == "0")
                                 {
-                                	$stat = "Active";
+                                	$stat = "Active Case";
                                 }
                                 else {
-                                	$stat = "Archived";
+                                	$stat = "Case close";
                                 }
 
                                 echo "<td>" . $stat . "</td> ";
 
-                                echo "<td><a class='btn btn-success' style='width:49%;border:1px solid black;color:black' href='viewReports.php?id=" . $row['reportid'] . "'>Edit</a> ";
+                                echo "<td><a class='btn btn-success' style='width:20%;border:1px solid black;color:black' href='viewReports.php?id=" . $row['reportid'] . "'><i class='fa fa-edit'></i></a>
+								<a class='btn btn-danger' style='width:20%;border:1px solid black;color:black'href='delreports.php?delreports_id=" . $row['reportid'] . "'><i class='fa fa-trash'></i></a>";
 
                                 if ($row['status'] == "0")
                                 {
-                                	echo "<a class='btn btn-warning' style='width:49%;border:1px solid black;color:black' href='archiveReports.php?id=" . $row['reportid'] . "'>Archive</a></td> ";
+                                	echo "<a class='btn btn-warning' style='width:49%;border:1px solid black;color:black' href='archiveReports.php?id=" . $row['reportid'] . "'>Active</a></td> ";
                                 }
                                 else {
-                                	echo "<a class='btn btn-warning' style='width:49%;border:1px solid black;color:black' href='activateReports.php?id=" . $row['reportid'] . "'>Restore</a></td> ";
+                                	echo "<a class='btn btn-warning' style='width:49%;border:1px solid black;color:black' href='activateReports.php?id=" . $row['reportid'] . "'>Solve</a></td> ";
                                 }
 
                 	}
@@ -243,7 +244,7 @@
 
 		}
 	}
-
+	AOS.init();
 </script>
 
 

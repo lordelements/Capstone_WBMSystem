@@ -13,10 +13,9 @@
 		<link href="assets/css/external.css" rel="stylesheet">
 		<link href="assets/css/bootstrap.min.css" rel="stylesheet">
 		<link href="assets/css/style.css" rel="stylesheet">
-		<!--[if lt IE 9]>
-		<script src="assets/js/html5shiv.js"></script>
-		<script src="assets/js/respond.min.js"></script>
-		<![endif]-->
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	</head>
 	<body>
@@ -33,7 +32,7 @@
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="slider--content">
-						<form class="mb-0" method="post" action="funcOfficials.php" enctype="multipart/form-data" style="margin-top: -100px;">
+						<form class="mb-0" data-aos="fade-down" method="post" action="funcOfficials.php" enctype="multipart/form-data" style="margin-top: -100px;">
 							<div class="form-box search-properties">
 								<div class="row">
 									<div class="col-xs-12 col-sm-6 col-md-12">
@@ -111,7 +110,7 @@
 									<div class="col-xs-12 col-sm-6 col-md-12">
 										<div class="form-group">
 											<div class="select--box">
-												<input type="text" name="address" class="form-control" id="select-address" placeholder="Address" required>
+												<input type="text" name="address" class="form-control" value="Barangay Zone 1" id="select-address" placeholder="Address" required>
 											</div>
 										</div>
 									</div>
@@ -126,7 +125,7 @@
 										<div class="form-group">
 											<div class="select--box">
 												<i>Identification Card</i>
-												<input type="file" class="form-control" name="myfile" required="required"/>
+												<input type="file" class="form-control" name="myfile" accept="jpg, png, jepeg" required="required"/>
 											</div>
 										</div>
 									</div>
@@ -173,7 +172,7 @@
 		</div>
 	</section>
 	<section id="properties-carousel" class="properties-carousel pt-45 pb-90">
-		<div class="container">
+		<div class="container mt-20" data-aos="fade-up">
 			<div class="row">
 				<center><h5>Officials List</h5>
 			Search: <input id="myInput" class="form-control" style="display:inline;width: 50%;" type="text" placeholder="Search by ID, Name, Address, Contact Number, and etc."></center><br>
@@ -235,29 +234,30 @@
 
                                 if ($row['status'] == "0")
                                 {
-                                	$stat = "Active";
+                                	$stat = "Active Official";
                                 }
                                 else {
-                                	$stat = "Archived";
+                                	$stat = "Not Active";
                                 }
 
                                 echo "<td>" . $stat . "</td> ";
                                 // echo "<td><a target='_blank' class='btn btn-light' style='width:100%;border:1px solid black;color:black' href='".$row['idcard']."'>View</a></td> ";
 
-                                echo "<td><a class='btn btn-success' style='width:49%;border:1px solid black;color:black' href='viewOfficial.php?id=" . $row['officialid'] . "'><i class='fa fa-edit'></i></a> 
-								<a class='btn btn-danger' style='width:49%;border:1px solid black;color:black'href='delOfficials.php?delOff_id=" . $row['officialid'] . "'><i class='fa fa-trash'></i></a>";
-
+                                echo "<td><a class='btn btn-success' style='margin:4px;width:20%;border:1px solid black;color:black' href='viewOfficial.php?id=" . $row['officialid'] ."'><i class='fa fa-edit'></i></a> 
+								<a class='btn btn-danger' style='width:20%;border:1px solid black;color:black'href='delOfficials.php?delOff_id=" . $row['officialid'] . "'><i class='fa fa-trash'></i></a>";
+								
                                 if ($row['status'] == "0")
                                 {
-                                	echo "<a class='btn btn-warning' style='width:49%;border:1px solid black;color:black' href='archiveOfficials.php?id=" . $row['officialid'] . "'>Archive</a></td> ";
+                                	echo "<a class='btn btn-warning' style='width:47%;border:1px solid black;color:black' href='archiveOfficials.php?id=" . $row['officialid'] . "'>Active</a></td> ";
                                 }
                                 else {
-                                	echo "<a class='btn btn-warning' style='width:49%;border:1px solid black;color:black' href='activateOfficials.php?id=" . $row['officialid'] . "'>Restore</a></td> ";
+                                	echo "<a class='btn btn-warning' style='width:47%;border:1px solid black;color:black' href='activateOfficials.php?id=" . $row['officialid'] . "'>Disactive</a></td> ";
                                 }
 
                 	}
                 	echo '</table><br>';
                 	?>
+					
 			</div>
 		</div>
 
@@ -337,9 +337,13 @@
 	}
 
 	
+	AOS.init();
 </script>
 
-
+<!-- 
+<script>
+    AOS.init();
+  </script> -->
 
 </body>
 <!-- index Sun, 18 Jul 2021 09:33:18 GMT -->

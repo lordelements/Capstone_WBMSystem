@@ -10,7 +10,7 @@ $id = $_GET['id'];
 		if ($result === true) {
 			
 			$_SESSION['status'] = "Success";
-			$_SESSION['status_text'] = "Record restore successfully";
+			$_SESSION['status_text'] = "Barangay Official is active.";
 			$_SESSION['status_code'] = "success";
 			header('Location: officials.php');	
 			

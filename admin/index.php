@@ -18,6 +18,9 @@
 		<link href="assets/css/bootstrap.min.css" rel="stylesheet">
 		<link href="assets/css/style.css" rel="stylesheet">
 		
+		<link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 		<!--[if lt IE 9]>
 		<script src="assets/js/html5shiv.js"></script>
 		<script src="assets/js/respond.min.js"></script>
@@ -60,7 +63,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="carousel slider-navs" data-slide="1" data-slide-rs="1" data-autoplay="true" data-nav="true" data-dots="false" data-space="0" data-loop="true" data-speed="800">
+		<div class="carousel slider-navs"  data-aos="fade-right" data-slide="1" data-slide-rs="1" data-autoplay="true" data-nav="true" data-dots="false" data-space="0" data-loop="true" data-speed="800">
 			<div class="slide--item bg-overlay bg-overlay-dark3">
 				<div class="bg-section">
 					<img src="../bg1.jpg" alt="background">
@@ -93,7 +96,7 @@
 <script src="assets/js/functions.js"></script>
 <script src="assets/loadGeo.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
 <script>
 	var myArray = []
@@ -125,7 +128,9 @@
 
 </script>
 
-
+<script>
+    AOS.init();
+  </script>
 </body>
 <!-- index Sun, 18 Jul 2021 09:33:18 GMT -->
 </html>

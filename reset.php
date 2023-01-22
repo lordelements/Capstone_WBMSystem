@@ -51,20 +51,31 @@ $logid = $row['logid'];
 			   /* PHPMailer error. */
 			   echo $mail->ErrorInfo;
 			}
-			function myAlert($msg, $url)
-				{
-			    echo '<script language="javascript">alert("'.$msg.'");</script>';
-			    echo "<script>document.location = '$url'</script>";
-				}
-			myAlert("New password was sent to your email.", "index.php");
+			$_SESSION['status'] = "Success";
+			$_SESSION['status_text'] = "New password was sent to your email.";
+			$_SESSION['status_code'] = "success";
+			header('Location: index.php');
+
+			// function myAlert($msg, $url)
+			// 	{
+			//     echo '<script language="javascript">alert("'.$msg.'");</script>';
+			//     echo "<script>document.location = '$url'</script>";
+			// 	}
+			// myAlert("New password was sent to your email.", "index.php");
 	}
 	else {
-		function myAlert($msg, $url)
-				{
-			    echo '<script language="javascript">alert("'.$msg.'");</script>';
-			    echo "<script>document.location = '$url'</script>";
-				}
-		myAlert("Account not found.", "index.php");
+
+		$_SESSION['status'] = "Error";
+		$_SESSION['status_text'] = "Account not found.";
+		$_SESSION['status_code'] = "error";
+		header('Location: index.php');
+
+		// function myAlert($msg, $url)
+		// 		{
+		// 	    echo '<script language="javascript">alert("'.$msg.'");</script>';
+		// 	    echo "<script>document.location = '$url'</script>";
+		// 		}
+		// myAlert("Account not found.", "index.php");
 	}
 
 ?>

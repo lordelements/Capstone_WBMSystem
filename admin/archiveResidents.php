@@ -9,14 +9,14 @@ include ('../condb.php');
 	
 	if ($result === true) {
 			
-		$_SESSION['status'] = "Success";
-		$_SESSION['status_text'] = "Residents archive successfully";
+		$_SESSION['status'] = "Status Changed";
+		$_SESSION['status_text'] = "Barangay Residents of Zone 1 is not active residents.";
 		$_SESSION['status_code'] = "success";
 		header('Location: residents.php');	
 		
 	}else {
 		$_SESSION['status'] = "Error";
-		$_SESSION['status_text'] = "Residents is not added to archive";
+		$_SESSION['status_text'] = "Residents is not added to restore status";
 		$_SESSION['status_code'] = "error";
 		header('Location: residents.php');
 	}

@@ -1,6 +1,7 @@
 <?php
 
 include ('../condb.php');
+session_start();
 
 $email = $_POST['email'];
 $currpass = $_POST['currpass'];
@@ -11,36 +12,34 @@ $result = mysqli_query ($cn, "SELECT * FROM accounts WHERE email = '$email'");
 $row = mysqli_fetch_assoc($result);
 
 
-
-if($currpass == $row['password']){
-	if($newpass == $confpass){
-		$sql2 = "UPDATE accounts SET password='$newpass' WHERE email='$email'";
-		$result = mysqli_query($cn,$sql2);
-
-		function myAlert1($msg, $url){
-		echo '<script language="javascript">alert("'.$msg.'");</script>';
-		echo "<script>document.location = '$url'</script>";
+	if($currpass == $row['password']){
+				
+		if (strlen($newpass == $confpass) < 8) {
+			$_SESSION['status'] = "Error";
+			$_SESSION['status_text'] = "Error: Password must be at least 8 characters long.";
+			$_SESSION['status_code'] = "error";
+			header('Location: index.php');
+		} 
+		if($newpass == $confpass){
+			$sql2 = "UPDATE accounts SET password='$newpass' WHERE email='$email'";
+			$result = mysqli_query($cn,$sql2);
+			$_SESSION['status'] = "Success";
+			$_SESSION['status_text'] = "Password Changed!";
+			$_SESSION['status_code'] = "success";
+			header('Location: reports.php');	
 		}
-		myAlert1("Password Changed!", "viewAccount.php");
+		else {
+			$_SESSION['status'] = "Error";
+			$_SESSION['status_text'] = "New password and confirm password does not match!";
+			$_SESSION['status_code'] = "error";
+			header('Location: viewAccount.php');
+		}
 	}
 	else {
-		function myAlert($msg, $url)
-		{
-	    echo '<script language="javascript">alert("'.$msg.'");</script>';
-	    echo "<script>document.location = '$url'</script>";
-		}
-		myAlert("New password and confirm password does not match!", "viewAccount.php");
+		$_SESSION['status'] = "Error";
+		$_SESSION['status_text'] = "Incorrect Password!";
+		$_SESSION['status_code'] = "error";
+		header('Location: viewAccount.php');
 	}
-}
-else {
-	function myAlert($msg, $url)
-	{
-    echo '<script language="javascript">alert("'.$msg.'");</script>';
-    echo "<script>document.location = '$url'</script>";
-	}
-	myAlert("Incorrect Password!", "viewAccount.php");
-}
-
-
 
 ?>
