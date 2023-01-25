@@ -42,21 +42,21 @@
 									<div class="col-xs-12 col-sm-6 col-md-4">
 										<div class="form-group">
 											<div class="select--box">
-												<input type="text" name="lastname" class="form-control" id="select-location" placeholder="Last Name" required>
+												<input type="text" name="lastname" class="form-control" autocomplete="off" id="select-location" placeholder="Last Name" required>
 											</div>
 										</div>
 									</div>
 									<div class="col-xs-12 col-sm-6 col-md-4">
 										<div class="form-group">
 											<div class="select--box">
-												<input type="text" name="middlename" class="form-control" id="select-location" placeholder="Middle Name" required>
+												<input type="text" name="middlename" class="form-control" autocomplete="off" id="select-location" placeholder="Middle Name" required>
 											</div>
 										</div>
 									</div>
 									<div class="col-xs-12 col-sm-6 col-md-4">
 										<div class="form-group">
 											<div class="select--box">
-												<input type="text" name="firstname" class="form-control" id="select-location" placeholder="First Name" required>
+												<input type="text" name="firstname" class="form-control" autocomplete="off" id="select-location" placeholder="First Name" required>
 											</div>
 										</div>
 									</div>
@@ -85,7 +85,7 @@
 										<div class="form-group">
 											<div class="select--box">
 												<i class="fa fa-angle-down"></i>
-												<select name="civilstatus" id="select-type">
+												<select name="civilstatus" autocomplete="off" id="select-type">
 													<option>Civil Status</option>
 													<option>Single</option>
 													<option>Married</option>
@@ -98,14 +98,14 @@
 									<div class="col-xs-12 col-sm-6 col-md-12">
 										<div class="form-group">
 											<div class="select--box">
-												<input type="text" name="address" class="form-control" id="select-address" placeholder="Purok" required>
+												<input type="text" name="address" class="form-control" autocomplete="off" id="select-address" placeholder="Purok" required>
 											</div>
 										</div>
 									</div>
 									<div class="col-xs-12 col-sm-6 col-md-6">
 										<div class="form-group">
 											<div class="select--box">
-												<input type="text" name="contact" class="form-control" id="select-contact" placeholder="Contact Number" required>
+												<input type="text" name="contact" class="form-control" autocomplete="off" id="select-contact" placeholder="Contact Number" required>
 											</div>
 										</div>
 									</div>
@@ -113,7 +113,7 @@
 										<div class="form-group">
 											<div class="select--box">
 												<i>Identification Card</i>
-												<input type="file" class="form-control" name="myfile" required="required"/>
+												<input type="file" class="form-control" name="myfile" autocomplete="off" required="required"/>
 											</div>
 										</div>
 									</div>

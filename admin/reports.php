@@ -38,56 +38,56 @@
 									<div class="col-xs-12 col-sm-6 col-md-4">
 										<div class="form-group">
 											<div class="select--box" data-aos="fade-right">
-												<input type="text" name="incident" class="form-control" id="select-incident" placeholder="Incident" required>
+												<input type="text" name="incident" class="form-control" autocomplete="off" id="select-incident" placeholder="Incident" required>
 											</div>
 										</div>
 									</div>
 									<div class="col-xs-12 col-sm-6 col-md-4">
 										<div class="form-group">
 											<div class="select--box">
-												<input type="text" name="incidentplace" class="form-control" id="select-incidentplace" placeholder="Incident Place">
+												<input type="text" name="incidentplace" class="form-control" autocomplete="off" id="select-incidentplace" placeholder="Incident Place">
 											</div>
 										</div>
 									</div>
 									<div class="col-xs-12 col-sm-6 col-md-4">
 										<div class="form-group">
 											<div class="select--box">
-												<input type="text" name="complainant" class="form-control" id="select-complainant" placeholder=" Complainant" required>
+												<input type="text" name="complainant" class="form-control" autocomplete="off" id="select-complainant" placeholder=" Complainant" required>
 											</div>
 										</div>
 									</div>
 									<div class="col-xs-12 col-sm-6 col-md-4">
 										<div class="form-group">
 											<div class="select--box">
-												<input type="text" name="complainee" class="form-control" id="select-complainee" placeholder=" Complainee" required>
+												<input type="text" name="complainee" class="form-control" autocomplete="off" id="select-complainee" placeholder=" Complainee" required>
 											</div>
 										</div>
 									</div>
 									<div class="col-xs-12 col-sm-6 col-md-4">
 										<div class="form-group">
 											<div class="select--box">
-												<input type="text" name="witness1" class="form-control" id="select-witness1" placeholder="Witness 1">
+												<input type="text" name="witness1" class="form-control" autocomplete="off" id="select-witness1" placeholder="Witness 1">
 											</div>
 										</div>
 									</div>
 									<div class="col-xs-12 col-sm-6 col-md-4">
 										<div class="form-group">
 											<div class="select--box">
-												<input type="text" name="witness2" class="form-control" id="select-witness2" placeholder="Witness 2">
+												<input type="text" name="witness2" class="form-control" autocomplete="off" id="select-witness2" placeholder="Witness 2">
 											</div>
 										</div>
 									</div>
 									<div class="col-xs-12 col-sm-6 col-md-12">
 										<div class="form-group">
 											<div class="select--box">
-												<input type="text" name="narrative" class="form-control" id="select-narrative" placeholder="Narrative" required>
+												<input type="text" name="narrative" class="form-control" autocomplete="off" id="select-narrative" placeholder="Narrative" required>
 											</div>
 										</div>
 									</div>
 									<div class="col-xs-12 col-sm-6 col-md-6">
 										<div class="form-group">
 											<div class="select--box">
-												<input type="datetime-local" name="dateandtime" class="form-control" id="select-dateandtime" placeholder="Date and Time" required>
+												<input type="datetime-local" name="dateandtime" class="form-control" autocomplete="off" id="select-dateandtime" placeholder="Date and Time" required>
 											</div>
 										</div>
 									</div>

@@ -54,21 +54,21 @@
 									<div class="col-xs-12 col-sm-6 col-md-4">
 										<div class="form-group">
 											<div class="select--box">
-												<input type="text" name="lastname" class="form-control" id="select-location" placeholder="Last Name" required>
+												<input type="text" name="lastname" class="form-control" autocomplete="off" id="select-location" placeholder="Last Name" required>
 											</div>
 										</div>
 									</div>
 									<div class="col-xs-12 col-sm-6 col-md-4">
 										<div class="form-group">
 											<div class="select--box">
-												<input type="text" name="middlename" class="form-control" id="select-location" placeholder="Middle Name" required>
+												<input type="text" name="middlename" class="form-control" autocomplete="off" id="select-location" placeholder="Middle Name" required>
 											</div>
 										</div>
 									</div>
 									<div class="col-xs-12 col-sm-6 col-md-4">
 										<div class="form-group">
 											<div class="select--box">
-												<input type="text" name="firstname" class="form-control" id="select-location" placeholder="First Name" required>
+												<input type="text" name="firstname" class="form-control" autocomplete="off" id="select-location" placeholder="First Name" required>
 											</div>
 										</div>
 									</div>
@@ -89,7 +89,7 @@
 									<div class="col-xs-12 col-sm-6 col-md-6">
 										<div class="form-group">
 											<div class="select--box">
-												<input type="date" name="birthdate" class="form-control" id="select-birthdate" placeholder="Birthdate" required>
+												<input type="date" name="birthdate" class="form-control" autocomplete="off" id="select-birthdate" placeholder="Birthdate" required>
 											</div>
 										</div>
 									</div>
@@ -110,14 +110,14 @@
 									<div class="col-xs-12 col-sm-6 col-md-12">
 										<div class="form-group">
 											<div class="select--box">
-												<input type="text" name="address" class="form-control" value="Barangay Zone 1" id="select-address" placeholder="Address" required>
+												<input type="text" name="address" class="form-control" autocomplete="off" value="Barangay Zone 1" id="select-address" placeholder="Address" required>
 											</div>
 										</div>
 									</div>
 									<div class="col-xs-12 col-sm-6 col-md-6">
 										<div class="form-group">
 											<div class="select--box">
-												<input type="text" name="contact" class="form-control" id="select-contact" placeholder="Contact Number" required>
+												<input type="text" name="contact" class="form-control" autocomplete="off" id="select-contact" placeholder="Contact Number" required>
 											</div>
 										</div>
 									</div>
@@ -139,7 +139,7 @@
 									<div class="col-xs-12 col-sm-6 col-md-6">
 										<div class="form-group">
 											<div class="select--box">
-												<p style="display:inline;">Year Started</p><input type="text" maxlength="4" pattern="\d{4}" name="yearstarted" class="form-control" id="select-yearstarted" placeholder="2022" required>
+												<p style="display:inline;">Year Started</p><input type="text" autocomplete="off" maxlength="4" pattern="\d{4}" name="yearstarted" class="form-control" id="select-yearstarted" placeholder="2022" required>
 											</div>
 										</div>
 									</div>

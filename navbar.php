@@ -79,10 +79,10 @@ include 'condb.php';
                                                         <form class="mb-0" method="post" action="funcLogin.php">
 
                                                             <div class="form-group">
-                                                                <input type="email" class="form-control" name="email" id="login-email" placeholder="Email Address">
+                                                                <input type="email" class="form-control" autocomplete="off" name="email" id="login-email" placeholder="Email Address">
                                                             </div>
                                                             <div class="form-group">
-                                                                <input type="password" class="form-control" name="password" id="login-password" placeholder="Password">
+                                                                <input type="password" class="form-control" autocomplete="off" name="password" id="login-password" placeholder="Password">
                                                             </div>
                                                             <input type="submit" class="btn btn--primary btn--block" name="submit" value="Sign In">
                                                             <a href="forgot.php" class="forget-password">Forget your password?</a>
@@ -97,24 +97,24 @@ include 'condb.php';
                                                             <input type="text" class="form-control" name="position" id="position" style="text-transform:capitalize;width: 100%;display: inline;" placeholder="Position" required="required">
                                                         </div> -->
                                                         <div class="form-group">
-                                                            <input type="text" class="form-control" name="fname" id="full-name" style="text-transform:capitalize;width: 33%;display: inline;" placeholder="First Name" required="required">
-                                                            <input type="text" class="form-control" name="mname" id="full-name" style="text-transform:capitalize;width: 32.6%;display: inline" placeholder="Middle Name"  >
-                                                            <input type="text" class="form-control" name="lname" id="full-name" style="text-transform:capitalize;width: 33.5%;display: inline" placeholder="Last Name" required="required">
+                                                            <input type="text" class="form-control" name="fname" autocomplete="off" id="full-name" style="text-transform:capitalize;width: 33%;display: inline;" placeholder="First Name" required="required">
+                                                            <input type="text" class="form-control" name="mname" autocomplete="off" id="full-name" style="text-transform:capitalize;width: 32.6%;display: inline" placeholder="Middle Name"  >
+                                                            <input type="text" class="form-control" name="lname" autocomplete="off" id="full-name" style="text-transform:capitalize;width: 33.5%;display: inline" placeholder="Last Name" required="required">
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="disabled" class="form-control" name="address" id="full-address" style="text-transform:capitalize;width: 49.5%;display: inline" value="Barangay Zone 1" required="required" >
-                                                            <input type="tel" pattern="[0-9]{11}" class="form-control" name="contact" id="contact" style="text-transform:capitalize;width: 50%;display: inline" placeholder="Contact Number" required="required">
+                                                            <input type="disabled" class="form-control" name="address" autocomplete="off" id="full-address" style="text-transform:capitalize;width: 49.5%;display: inline" value="Barangay Zone 1" required="required" >
+                                                            <input type="tel" pattern="[0-9]{11}" class="form-control" autocomplete="off" name="contact" id="contact" style="text-transform:capitalize;width: 50%;display: inline" placeholder="Contact Number" required="required">
                                                         </div>
                                                         <div class="form-group">
                                                         <label>Identification Card<span style="color:red;">*</span></label>
                                                         <input type="file" name="myfile" id="img" style="width: 100%;display: inline;" class="form-control" required="required" style="display:none;">
                                                         </div>
                                                         <div class="form-group">
-                                                        <input type="email" class="form-control" name="email" id="register-email" placeholder="Email Address" required="required" spellcheck="true">
+                                                        <input type="email" class="form-control" name="email" autocomplete="off" id="register-email" placeholder="Email Address" required="required" spellcheck="true">
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="password" class="form-control" name="pw" style="width: 49.5%;display: inline;" id="register-password" placeholder="Password">
-                                                            <input type="password" class="form-control" name="cpw" style="width: 50%;display: inline;" id="register-password" placeholder="Confirm Password">
+                                                            <input type="password" class="form-control" name="pw" autocomplete="off" style="width: 49.5%;display: inline;" id="register-password" placeholder="Password">
+                                                            <input type="password" class="form-control" name="cpw" autocomplete="off" style="width: 50%;display: inline;" id="register-password" placeholder="Confirm Password">
                                                         </div>
                                                         <div class="input-checkbox">
                                                             <label class="label-checkbox">

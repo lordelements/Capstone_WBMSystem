@@ -38,35 +38,35 @@
 									<div class="col-xs-12 col-sm-6 col-md-4">
 										<div class="form-group">
 											<div class="select--box">
-												<input type="text" name="lname" class="form-control" id="select-location" placeholder="Last Name" required>
+												<input type="text" name="lname" class="form-control" autocomplete="off" id="select-location" placeholder="Last Name" required>
 											</div>
 										</div>
 									</div>
 									<div class="col-xs-12 col-sm-6 col-md-4">
 										<div class="form-group">
 											<div class="select--box">
-												<input type="text" name="mname" class="form-control" id="select-location" placeholder="Middle Name">
+												<input type="text" name="mname" class="form-control" autocomplete="off" id="select-location" placeholder="Middle Name">
 											</div>
 										</div>
 									</div>
 									<div class="col-xs-12 col-sm-6 col-md-4">
 										<div class="form-group">
 											<div class="select--box">
-												<input type="text" name="fname" class="form-control" id="select-location" placeholder="First Name" required>
+												<input type="text" name="fname" class="form-control" autocomplete="off" id="select-location" placeholder="First Name" required>
 											</div>
 										</div>
 									</div>
 									<div class="col-xs-12 col-sm-6 col-md-6">
 										<div class="form-group">
 											<div class="select--box">
-												<input type="text" name="email" class="form-control" id="select-email" placeholder="Email Address" required>
+												<input type="text" name="email" class="form-control" autocomplete="off" id="select-email" placeholder="Email Address" required>
 											</div>
 										</div>
 									</div>
 									<div class="col-xs-12 col-sm-6 col-md-6">
 										<div class="form-group">
 											<div class="select--box">
-												<input type="text" name="contact" class="form-control" id="select-contact" placeholder="Contact Number" required>
+												<input type="text" name="contact" class="form-control" autocomplete="off" id="select-contact" placeholder="Contact Number" required>
 											</div>
 										</div>
 									</div>
