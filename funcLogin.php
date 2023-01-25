@@ -22,12 +22,7 @@
 		}
 		else
 		{
-		// 	function myAlert1($msg, $url){
-		// echo '<script language="javascript">alert("'.$msg.'");</script>';
-		// echo "<script>document.location = '$url'</script>";
-		// }
-		// myAlert1("Incorrect login credentials!", "index.php");
-
+		
 		// $_SESSION['success'] = "Password or Email is incorrect!";
 		$_SESSION['status'] = "Error!";
 		$_SESSION['status_text'] = "Password or Email is incorrect!";

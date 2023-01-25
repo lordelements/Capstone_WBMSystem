@@ -2,7 +2,7 @@
 
 // Connect to the MySQL database
 include '../condb.php';
-$output = ' ';
+// $output = ' ';
 
 // require 'vendor/autoload.php';
 // require 'excelReader/Writer/Xlsx.php';
@@ -73,44 +73,105 @@ $output = ' ';
 
 
 // Execute a SELECT statement to retrieve the data
-$query = "SELECT * FROM residents ORDER BY residentid ASC";
-$result = mysqli_query($cn, $query);
-if (mysqli_num_rows($result) > 0) {
-    $output .= ' 
-        <table class="table table-striped table-hover" bordered="1">
+// $query = "SELECT 'residentid','lastname','middlename','firstname','gender','birthdate','civilstatus','address','contact' FROM residents ORDER BY residentid ASC";
+// $result = mysqli_query($cn, $query);
+
+// if (!$result = $cn->query($query)) {
+//     exit($cn->error);
+// }
+
+// $users = array();
+// if ($result->num_rows > 0) {
+//     while ($row = $result->fetch_assoc()) {
+//         $users[] = $row;
+//     }
+// }
+
+// header('Content-Type: text/csv; charset=utf-8');
+// header('Content-Disposition: attachment; filename=Residents.csv');
+// $output = fopen('php://output', 'w');
+// fputcsv($output, array('residentid', 'lastname','middlename', 'firstname', 'gender', 'birthdate', 'civilstatus', 'address', 'contact'));
+
+// if (count($users) > 0) {
+//     foreach ($users as $row) {
+//         fputcsv($output, $row);
+//     }
+// }
+
+
+// $query = "SELECT * FROM residents ORDER BY residentid ASC";
+// $result = mysqli_query($cn, $query);
+
+// if (mysqli_num_rows($result) > 0) {
+//     $output .= ' 
+//         <table class="table" bordered="1">
                        
-                            <tr style = "height: 30px;">
-                                <th >Resident ID</th>
-                                <th >Name</th>
-                                <th >Gender</th>
-                                <th >Birthdate</th>
-                                <th >Civil Status</th>
-                                <th >Address</th>
-                                <th >Contact</th>
-                            </tr>
-    ';
-    while ( $row = mysqli_fetch_assoc($result)) {
-        $output .= '
-                        <tr>
-                            <td >'. $row['residentid']. '</td>
-                            <td>'.  $row['lastname'].' ' . $row['middlename'] . ' ' . $row['firstname'] . '</td>
-                            <td >'. $row['gender']. '</td>
-                            <td >'. $row['birthdate']. '</td>
-                            <td>'.  $row['civilstatus']. '</td>
-                            <td >'. $row['address']. '</td>
-                            <td >'. $row['contact']. '</td>
-                        </tr>
-                    ';
-}
-    $output.= '
+//                             <tr style = "height: 30px;">
+//                                 <th >Resident ID</th>
+//                                 <th >Name</th>
+//                                 <th >Gender</th>
+//                                 <th >Birthdate</th>
+//                                 <th >Civil Status</th>
+//                                 <th >Address</th>
+//                                 <th >Contact</th>
+//                             </tr>
+//     ';
+//     while ( $row = mysqli_fetch_assoc($result)) {
+//         $output .= '
+//                         <tr>
+//                             <td >'. $row['residentid']. '</td>
+//                             <td>'.  $row['lastname'].' ' . $row['middlename'] . ' ' . $row['firstname'] . '</td>
+//                             <td >'. $row['gender']. '</td>
+//                             <td >'. $row['birthdate']. '</td>
+//                             <td>'.  $row['civilstatus']. '</td>
+//                             <td >'. $row['address']. '</td>
+//                             <td >'. $row['contact']. '</td>
+//                         </tr>
+//                     ';
+// }
+//     $output.= '
                        
-                        </table>
-    ';
-    // Output the spreadsheet as a download
-    header("Content-Type: application/Microsoft® Excel® for Microsoft 365 MSO (Version 2212 Build 16.0.15928.20196) 64-bit /xls,csv");
-    header("Content-Disposition:attachment; filename=barangay_residents_data.xlxs");
-    echo $output;
-    exit(0);
+//                         </table>
+//     ';
+//     // Output the spreadsheet as a download
+//     // header('Content-Type: text/xls; charset=utf-8');
+//     // header("Content-Type: application/vnd.ms-excel");
+//     // header("Content-Disposition:attachment; filename=barangay_Residents.xls");
+//     // prepare headers information
+    
+//     header("Content-Type: application/force-download");
+//     header("Content-Type: application/vnd.ms-excel 97-2003");
+//     header("Content-Type: application/download");
+//     header("Content-Disposition: attachment; filename=\"Residentsdata_".date("Y-m-d").".xls\"");
+//     header("Content-Transfer-Encoding: binary");
+//     header("Pragma: no-cache");
+//     header("Expires: 0");
+//     echo $output;
+//     exit(0);
+// }
+
+include('SimpleXLSXGen.php');
+
+$residents = [
+    ['Resident ID', 'Full Name' , 'Gender' , 'Birthdate' , 'Civil Status' , 'Address' , 'Contact']
+];
+
+$residentid = 0;
+$sql = "SELECT * FROM residents ORDER BY residentid ASC";
+$res = mysqli_query($cn, $sql);
+if (mysqli_num_rows($res) > 0) {
+    foreach ($res as $row) {
+        $residentid++;
+        $residents = array_merge($residents, array(array($residentid, $row['lastname'].' ' . $row['middlename'] . ' ' . $row['firstname'],
+        $row['gender'], $row['birthdate'], $row['civilstatus'], $row['address'], $row['contact'])));
+    }
 }
+
+$xlsx = Shuchkin\SimpleXLSXGen::fromArray( $residents );
+$xlsx->downloadAs('residents.xlsx');
+
+
+// echo "<pre>";
+// print_r($residents);
 
 ?>

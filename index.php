@@ -1,5 +1,5 @@
 <?php
-	session_start();
+	// session_start();
 	// error_reporting(0);
 ?>
 <!DOCTYPE html>
@@ -31,7 +31,7 @@
 		</nav>
 	</header>
 	<section id="heroSearch" class="hero-search mtop-100 pt-0 pb-0">
-		<?php
+		<!-- <?php
 		 if(isset($_SESSION['status']) && $_SESSION['status'])
 		?>
 			<script>
@@ -44,7 +44,7 @@
 			</script>
 		<?php
 		 unset($_SESSION['status']);
-		?>
+		?> -->
 		
 		<div class="container">
 			<div class="row">

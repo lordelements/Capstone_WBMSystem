@@ -1,5 +1,5 @@
 <?php   
-// session_start();
+session_start();
 include 'condb.php';
 ?> 
 <title>Barangay Zone 1 Bulan Sorsogon | Home</title>
@@ -144,7 +144,22 @@ include 'condb.php';
 -->
 
                 </div>
-            
+                <?php
+                    if(isset($_SESSION['status']) && $_SESSION['status'])
+                    ?>
+                        <script>
+                            swal({
+                                title: "<?php echo $_SESSION['status']?>",
+                                text: "<?php echo $_SESSION['status_text']?>",
+                                icon: "<?php echo $_SESSION['status_code'];?>",
+                                button: "OK",
+                            });
+                        </script>
+                    <?php
+                    unset($_SESSION['status']);
+                    ?> 
+         
                 <!-- Vlidate password -->
                 <script src="validatepass.js"></script>
-                <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+                <!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
+                <script src="assets/js/sweetalert.min.js"></script>

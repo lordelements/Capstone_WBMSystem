@@ -161,7 +161,8 @@ if($_SESSION['email'] == ""){
 -->
 
                 </div>
-                <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+                <!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
+                <script src="assets/js/sweetalert.min.js"></script>
                 <!-- <script>
                     swal({
                     title: "Good job!",

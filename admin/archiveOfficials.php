@@ -10,7 +10,7 @@ include ('../condb.php');
 		if ($result === true) {
 			
 			$_SESSION['status'] = "Success";
-			$_SESSION['status_text'] = "Not active official.";
+			$_SESSION['status_text'] = "Not active official of the barangay.";
 			$_SESSION['status_code'] = "success";
 			header('Location: officials.php');	
 			

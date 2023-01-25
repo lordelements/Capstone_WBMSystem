@@ -3,14 +3,15 @@
 include 'condb.php';
 session_start();
 
-$fname = $_POST['fname'];
-$mname = $_POST['mname'];
-$lname = $_POST['lname'];
-$email = $_POST['email'];
-$pass = $_POST['pw'];
-$conpass = $_POST['cpw'];
-$address = $_POST['address'];
-$contact = $_POST['contact'];
+$fname = $cn->real_escape_string($_POST['fname']);
+$mname = $cn->real_escape_string($_POST['mname']);
+$lname = $cn->real_escape_string($_POST['lname']);
+$email = $cn->real_escape_string($_POST['email']);
+// $pass = $_POST['pw'];
+$pass = $cn->real_escape_string($_POST['pw']);
+$conpass = $cn->real_escape_string($_POST['cpw']);
+$address = $cn->real_escape_string($_POST['address']);
+$contact = $cn->real_escape_string($_POST['contact']);
 // $position = $_POST['position'];
 
 $full = $fname . ' ' . $mname . ' ' . $lname;

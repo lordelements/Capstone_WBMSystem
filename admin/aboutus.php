@@ -84,10 +84,10 @@
 	</section>
 	
 
-	<div class="container mb-10">
+	<div class="container mb-10 p-30">
 	<div class="row bg-overlay bg-overlay-dark3">
-		<h1 data-aos="fade-rigth">Barangay Zone 1 Bulan Sorsogon</h1> 
-		<img src="brgyinfobg.jpg" data-aos="fade-up" style="height: 500px; width: 100%; border-radius: 5px;">
+		<h1>Barangay Zone 1 Bulan Sorsogon</h1> 
+		<img src="brgyinfobg.jpg" style="height: 500px; width: 100%; border-radius: 5px;">
 	</div>
 	<!-- <?php	
 		$brgyid = $_POST['brgyid'];

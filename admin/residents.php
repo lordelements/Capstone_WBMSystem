@@ -65,7 +65,7 @@
 											<div class="select--box">
 												<i class="fa fa-angle-down"></i>
 												<select name="gender" id="select-gender" required>
-													<option>Gender</option>
+													<option required>Gender</option>
 													
 													<option>Male</option>
 													<option>Female</option>
@@ -220,7 +220,7 @@
                                 	echo "<a class='btn btn-warning' style='width:49%;border:1px solid black;color:black' href='archiveResidents.php?id=" . $row['residentid'] . "'>Active</a></td> ";
                                 }
                                 else {
-                                	echo "<a class='btn btn-warning' style='width:49%;border:1px solid black;color:black' href='activateResidents.php?id=" . $row['residentid'] . "'>Disactive</a></td> ";
+                                	echo "<a class='btn btn-warning' style='width:49%;border:1px solid black;color:black' href='activateResidents.php?id=" . $row['residentid'] . "'>Unactive</a></td> ";
                                 }
 
                 	}

@@ -17,6 +17,7 @@
 		<link href="assets/css/external.css" rel="stylesheet">
 		<link href="assets/css/bootstrap.min.css" rel="stylesheet">
 		<link href="assets/css/style.css" rel="stylesheet">
+		<link href="../assets/images/logo/logo.png" rel="icon">
 		
 		<link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
 		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
@@ -41,7 +42,7 @@
 				<div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="slider--content">
 						<div class="text-center" style="margin-top: -110px;">
-						<?php
+						<!-- <?php
 							if(isset($_SESSION['status']) && $_SESSION['status'])
 							?>
 								<script>
@@ -54,7 +55,7 @@
 								</script>
 							<?php
 							unset($_SESSION['status']);
-							?>
+							?> -->
 		
 							<!-- TOTAL OF OFFICIALS, RESIDENTS, USERS -->
 							<?php include 'total_cards.php' ?>
@@ -63,7 +64,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="carousel slider-navs"  data-aos="fade-right" data-slide="1" data-slide-rs="1" data-autoplay="true" data-nav="true" data-dots="false" data-space="0" data-loop="true" data-speed="800">
+		<div class="carousel slider-navs" data-slide="1" data-slide-rs="1" data-autoplay="true" data-nav="true" data-dots="false" data-space="0" data-loop="true" data-speed="800">
 			<div class="slide--item bg-overlay bg-overlay-dark3">
 				<div class="bg-section">
 					<img src="../bg1.jpg" alt="background">

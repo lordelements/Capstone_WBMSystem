@@ -251,7 +251,7 @@
                                 	echo "<a class='btn btn-warning' style='width:47%;border:1px solid black;color:black' href='archiveOfficials.php?id=" . $row['officialid'] . "'>Active</a></td> ";
                                 }
                                 else {
-                                	echo "<a class='btn btn-warning' style='width:47%;border:1px solid black;color:black' href='activateOfficials.php?id=" . $row['officialid'] . "'>Disactive</a></td> ";
+                                	echo "<a class='btn btn-warning' style='width:47%;border:1px solid black;color:black' href='activateOfficials.php?id=" . $row['officialid'] . "'>Unactive</a></td> ";
                                 }
 
                 	}
@@ -261,6 +261,19 @@
 			</div>
 		</div>
 
+		<style>
+			table::-webkit-scrollbar {
+				width: 10px;
+				overflow: scroll; /* Show scrollbars */
+				overflow-x: scroll; /* Show horizontal scrollbar */
+			}
+			table::-webkit-scrollbar-thumb  {
+				background: #888;
+			}
+			table::-webkit-scrollbar-thumb:hover {
+				background: #555;
+				}
+		</style>
 		<!-- <div class="modal fade" id="trashModule">
 		<div class="container-fluid">
 		<div class="modal-dialog modal-dialog-centered">
