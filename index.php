@@ -16,11 +16,6 @@
 		<link href="assets/css/external.css" rel="stylesheet">
 		<link href="assets/css/bootstrap.min.css" rel="stylesheet">
 		<link href="assets/css/style.css" rel="stylesheet">
-		<!--[if lt IE 9]>
-		<script src="assets/js/html5shiv.js"></script>
-		<script src="assets/js/respond.min.js"></script>
-		<![endif]-->
-
 	</head>
 	<body>
 		<div id="wrapper" class="wrapper clearfix">

@@ -172,7 +172,7 @@
 		</div>
 	</section>
 	<section id="properties-carousel" class="properties-carousel pt-45 pb-90">
-		<div class="container mt-20" data-aos="fade-up">
+		<div class="container mt-20">
 			<div class="row">
 				<center><h5>Officials List</h5>
 			Search: <input id="myInput" class="form-control" style="display:inline;width: 50%;" type="text" placeholder="Search by ID, Name, Address, Contact Number, and etc."></center><br>

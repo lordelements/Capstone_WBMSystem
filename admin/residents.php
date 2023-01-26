@@ -35,7 +35,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12">
-					<div class="slider--content" data-aos="fade-down">
+					<div class="slider--content">
 						<form class="mb-0" method="post" action="funcResidents.php" enctype="multipart/form-data">
 							<div class="form-box search-properties">
 								<div class="row"><br>
@@ -146,7 +146,7 @@
 		</div>
 	</section>
 	<section id="properties-carousel" class="properties-carousel pt-90 pb-90">
-		<div class="container" data-aos="fade-up">
+		<div class="container"">
 			<div class="row">
 				<center><h5>Residents List</h5>
 			Search: <input id="myInput" class="form-control" style="display:inline;width: 50%;" type="text" placeholder="Search by ID, Name, Address, Contact Number, and etc."></center><br>
