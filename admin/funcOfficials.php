@@ -74,51 +74,51 @@ if($res && mysqli_num_rows($res)>0)
 
             $idcard = $loc.$fileName;
         }
-        
-		// $res = mysqli_query($cn, "INSERT INTO officials (position, lastname, middlename, firstname, gender, birthdate, civilstatus, address, idcard, contact,termyears,yearstarted, status) VALUES ('$position','$lastname','$middlename','$firstname','$gender','$birthdate','$civilstatus','$address','$idcard','$contact','$termyears','$yearstarted','0')");
+	
+		$res = mysqli_query($cn, "INSERT INTO officials (position, lastname, middlename, firstname, gender, birthdate, civilstatus, address, idcard, contact,termyears,yearstarted, status) VALUES ('$position','$lastname','$middlename','$firstname','$gender','$birthdate','$civilstatus','$address','$idcard','$contact','$termyears','$yearstarted','0')");
+		$_SESSION['status'] = "Success";
+		$_SESSION['status_text'] = "Barangay Official is added.";
+		$_SESSION['status_code'] = "success";
+		header('Location: officials.php');
+
+		// $query = "SELECT position(*) FROM officials WHERE position = 'Punong Barangay'";
+		// $result = mysqli_query($cn, $query);
+ 
+		// if ($position  > $min_total) {
+			
+		// 	$_SESSION['status'] = "Warning";
+		// 	$_SESSION['status_text'] = "The minimum position must not exceed to $min_total.";
+		// 	$_SESSION['status_code'] = "warning";
+		// 	header('Location: officials.php');
+	
+		// }
+		// $query = "SELECT position FROM officials WHERE position = 'Barangay Kagawad'";
+		// $result = mysqli_query($cn, $query);
+ 
+		// if ($position  > $min_kagawad) {
+			
+		// 	$_SESSION['status'] = "Warning";
+		// 	$_SESSION['status_text'] = "The minimum position of kagawad not exceed to $min_kagawad.";
+		// 	$_SESSION['status_code'] = "warning";
+		// 	header('Location: officials.php');
+	
+		// }
+		// else{
+		// 	$res = mysqli_query($cn, "INSERT INTO officials (position, lastname, middlename, firstname, gender, birthdate, civilstatus, address, idcard, contact, termyears, yearstarted, status) VALUES ('$position','$lastname','$middlename','$firstname','$gender','$birthdate','$civilstatus','$address','$idcard','$contact','$termyears','$yearstarted','0')");
 		// 	$_SESSION['status'] = "Success";
 		// 	$_SESSION['status_text'] = "Barangay Official is added.";
 		// 	$_SESSION['status_code'] = "success";
 		// 	header('Location: officials.php');
-
-		$query = "SELECT position(*) FROM officials WHERE position = 'Punong Barangay'";
-		$result = mysqli_query($cn, $query);
- 
-		if ($position  > $min_total) {
-			
-			$_SESSION['status'] = "Warning";
-			$_SESSION['status_text'] = "The minimum position must not exceed to $min_total.";
-			$_SESSION['status_code'] = "warning";
-			header('Location: officials.php');
-	
-		}
-		$query = "SELECT position FROM officials WHERE position = 'Barangay Kagawad'";
-		$result = mysqli_query($cn, $query);
- 
-		if ($position  > $min_kagawad) {
-			
-			$_SESSION['status'] = "Warning";
-			$_SESSION['status_text'] = "The minimum position of kagawad not exceed to $min_kagawad.";
-			$_SESSION['status_code'] = "warning";
-			header('Location: officials.php');
-	
-		}
-		else{
-			$res = mysqli_query($cn, "INSERT INTO officials (position, lastname, middlename, firstname, gender, birthdate, civilstatus, address, idcard, contact, termyears, yearstarted, status) VALUES ('$position','$lastname','$middlename','$firstname','$gender','$birthdate','$civilstatus','$address','$idcard','$contact','$termyears','$yearstarted','0')");
-			$_SESSION['status'] = "Success";
-			$_SESSION['status_text'] = "Barangay Official is added.";
-			$_SESSION['status_code'] = "success";
-			header('Location: officials.php');
-		}
+		// }
 		
      }
-	 else {
+	//  else {
 		
-		$_SESSION['status'] = "Error";
-		$_SESSION['status_text'] = "Officials not added.";
-		$_SESSION['status_code'] = "error";
-		header('Location: officials.php');
-	 }
+	// 	$_SESSION['status'] = "Error";
+	// 	$_SESSION['status_text'] = "Officials not added.";
+	// 	$_SESSION['status_code'] = "error";
+	// 	header('Location: officials.php');
+	//  }
 
 }
    

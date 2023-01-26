@@ -1,6 +1,10 @@
 <?php   
-session_start();
-include 'condb.php';
+    session_start();
+    include 'condb.php';
+    if(isset($_SESSION['email']) && $_SESSION['password']) {
+        header('Location: admin/index.php');
+        exit(0);
+    }
 ?> 
 <title>Barangay Zone 1 Bulan Sorsogon | Home</title>
 <header id="navbar-spy" class="header header-1 header-transparent header-fixed">
@@ -161,5 +165,13 @@ include 'condb.php';
          
                 <!-- Vlidate password -->
                 <script src="validatepass.js"></script>
-                <!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
-                <script src="assets/js/sweetalert.min.js"></script>
+                <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+                <!-- <script>
+                    	swal({
+                        	title: "Good job!",
+                        	text: "You clicked the button!",
+                        	icon: "success",
+                        	button: "Aww yiss!",
+                        	});
+                </script> -->
+                <!-- <script src="assets/js/sweetalert.min.js"></script> -->

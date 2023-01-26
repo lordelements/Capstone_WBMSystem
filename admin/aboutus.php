@@ -34,15 +34,9 @@
 					<div class="slider--content">
 						<div class="text-center" style="margin-top: -110px;">
 						
-						<!-- <h1 class="text--left mb-50 font-10">Barangay Zone 1 Bulan Sorsogon</h1>
-							<div class="container-fluid bg-gray" style="height: 100%;  width:100%; margin-top: 10px; border-radius: 10px;">
-								<div class="row ">
-									<img src="brgyinfobg.jpg" style="height: 500px; width: 100%; border-radius: 5px;">
-								</div>
-							</div> -->
+							<?php	include('mission_vission_cards.php')?>
 
-
-							<img src="../logo.png" alt="Barangay Zone 1 Bulan Sorsogon logo" width="600" height="600" style="margin-top: -20px;">
+							<!-- <img src="../logo.png" alt="Barangay Zone 1 Bulan Sorsogon logo" width="600" height="600" style="margin-top: -20px;"> -->
 						</div>
 					</div>
 				</div>
@@ -87,7 +81,7 @@
 	<div class="container mb-10 p-30">
 	<div class="row bg-overlay bg-overlay-dark3">
 		<h1>Barangay Zone 1 Bulan Sorsogon</h1> 
-		<img src="brgyinfobg.jpg" style="height: 500px; width: 100%; border-radius: 5px;">
+		<img src="../assets/brgyinfobg.jpg" style="height: 500px; width: 100%; border-radius: 5px;">
 	</div>
 	<!-- <?php	
 		$brgyid = $_POST['brgyid'];

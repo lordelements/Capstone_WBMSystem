@@ -2,20 +2,22 @@
 session_start();
 // error_reporting(0);
 include '../condb.php';
-
-
-if($_SESSION['email'] == ""){
-    // $_SESSION['status'] = "Error";
-    // $_SESSION['status_text'] = "Please login to use the system!";
-    // $_SESSION['status_code'] = "error";
-    // header('Location: ../index.php');
-
-    function myAlert1($msg, $url){
-    echo '<script language="javascript">alert("'.$msg.'");</script>';
-    echo "<script>document.location = '$url'</script>";
+if(!isset($_SESSION['email'])) {
+    //  $_SESSION['success']  = "You must login first";
+         $_SESSION['status'] = "Warning";
+         $_SESSION['status_text'] = "You must login first";
+         $_SESSION['status_code'] = "warning";
+        header("Location: ../index.php");
+        exit(0);
     }
-    myAlert1("Please login to use the system!", "../index.php");
-}
+
+// if($_SESSION['email'] == ""){
+//     function myAlert1($msg, $url){
+//     echo '<script language="javascript">alert("'.$msg.'");</script>';
+//     echo "<script>document.location = '$url'</script>";
+//     }
+//     myAlert1("Please login to use the system!", "../index.php");
+// }
 
 
 ?> 
@@ -59,10 +61,12 @@ if($_SESSION['email'] == ""){
                                     <a href="#" data-toggle="dropdown" class="dropdown-toggle menu-item">My Account</a>&nbsp;
                                     <ul class="dropdown-menu">
                                         <li><a href="viewAccount.php">View Account</a></li>
-                                        <li><a href="../index.php">Logout</a></li>
+                                        <li><a href="../logout.php">Logout</a></li>
                                         <li>
                                             <a href="../dbdownload.php">Backup</a>
                                         </li>
+                                        <!-- <li>
+                                        <?php echo $_SESSION['email']?></li> -->
                                     </ul>
                                 </li> 
 

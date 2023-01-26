@@ -1,6 +1,6 @@
 <?php
-	// session_start();
-	// error_reporting(0);
+	session_start();
+	error_reporting(0);
 ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
@@ -31,7 +31,7 @@
 		</nav>
 	</header>
 	<section id="heroSearch" class="hero-search mtop-100 pt-0 pb-0">
-		<!-- <?php
+		<?php
 		 if(isset($_SESSION['status']) && $_SESSION['status'])
 		?>
 			<script>
@@ -44,7 +44,7 @@
 			</script>
 		<?php
 		 unset($_SESSION['status']);
-		?> -->
+		?>
 		
 		<div class="container">
 			<div class="row">
@@ -84,8 +84,8 @@
 <script src="assets/js/plugins.js"></script>
 <script src="assets/js/functions.js"></script>
 <script src="assets/loadGeo.js"></script>
-<!-- <script src="assets/sweetalert.min.js"></script> -->
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="assets/sweetalert.min.js"></script>
+<!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
 
 
 <script>

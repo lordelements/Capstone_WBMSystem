@@ -34,7 +34,7 @@ if($row<>0)
 	else
 	{
 		$_SESSION['status'] = "Error";
-		$_SESSION['status_text'] = "Data is not deleted.";
+		$_SESSION['status_text'] = "Information does not match.";
 		$_SESSION['status_code'] = "error";
 		header('Location: index.php');
 

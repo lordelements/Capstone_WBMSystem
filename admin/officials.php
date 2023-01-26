@@ -32,7 +32,7 @@
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="slider--content">
-						<form class="mb-0" data-aos="fade-down" method="post" action="funcOfficials.php" enctype="multipart/form-data" style="margin-top: -100px;">
+						<form class="mb-0" method="post" action="funcOfficials.php" enctype="multipart/form-data" style="margin-top: -100px;">
 							<div class="form-box search-properties">
 								<div class="row">
 									<div class="col-xs-12 col-sm-6 col-md-12">
@@ -89,7 +89,7 @@
 									<div class="col-xs-12 col-sm-6 col-md-6">
 										<div class="form-group">
 											<div class="select--box">
-												<input type="date" name="birthdate" class="form-control" autocomplete="off" id="select-birthdate" placeholder="Birthdate" required>
+											<input type="date" name="birthdate" class="form-control" autocomplete="off" id="select-birthdate" placeholder="Birthdate" required>
 											</div>
 										</div>
 									</div>
@@ -97,7 +97,7 @@
 										<div class="form-group">
 											<div class="select--box">
 												<i class="fa fa-angle-down"></i>
-												<select name="civilstatus" id="select-type" required>
+												<select name="civilstatus" id="select-type" autocomplete="off" required>
 													<option>Civil Status</option>
 													<option>Single</option>
 													<option>Married</option>

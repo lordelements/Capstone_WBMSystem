@@ -53,21 +53,21 @@
 									<div class="col-xs-12 col-sm-6 col-md-6">
 										<div class="form-group">
 											<div class="select--box">
-												<span>Current Password:</span><input type="password" name="currpass" class="form-control" id="select-currpass">
+												<span>Current Password:</span><input type="password" name="currpass" class="form-control" id="select-currpass" required>
 											</div>
 										</div>
 									</div>
 									<div class="col-xs-12 col-sm-6 col-md-6">
 										<div class="form-group">
 											<div class="select--box">
-												<span>New Password:</span><input type="password" name="newpass" class="form-control" id="select-currpass">
+												<span>New Password:</span><input type="password" name="newpass" class="form-control" id="select-currpass" required>
 											</div>
 										</div>
 									</div>
 									<div class="col-xs-12 col-sm-6 col-md-6">
 										<div class="form-group">
 											<div class="select--box">
-												<span>Confirm New Password:</span><input type="password" name="confpass" class="form-control" id="select-currpass">
+												<span>Confirm New Password:</span><input type="password" name="confpass" class="form-control" id="select-currpass" required>
 											</div>
 										</div>
 									</div>

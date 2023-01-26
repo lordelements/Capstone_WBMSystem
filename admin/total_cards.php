@@ -105,7 +105,7 @@
                     $totalUsers_count = mysqli_query($cn,$totalUsers);
                     if ($total_Users =mysqli_num_rows($totalUsers_count) ) {
                         echo '<h5 class="card-title text-white font-20"> 
-                        <a class="card-title text-white text-lg-start font-20" href="users_account.php">Users</a>Total '.$total_Users.'</h5>';
+                        <a class="card-title text-white text-lg-start font-20" href="#">Users</a>Total '.$total_Users.'</h5>';
                     }
                     else{
                         echo ' <p class="card-text text-white mt-4 text--center font-20">No data found</p>';
