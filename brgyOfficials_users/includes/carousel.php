@@ -1,4 +1,4 @@
-<div class="container-sm p-3 mt-lg-4 clearfix">
+<div class="container-fluid mb-40">
       <!-- Carousel wrapper -->
     <div id="carouselBasicExample" class="carousel slide carousel-fade" data-mdb-ride="carousel">
       <!-- Indicators -->

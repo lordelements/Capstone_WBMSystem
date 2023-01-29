@@ -25,7 +25,7 @@ $query = "UPDATE officials SET position='$position', lastname='$lastname', middl
 $result = mysqli_query($cn,$query);
 
 if ($result === true) {
-	$_SESSION['status'] = "Success";
+	$_SESSION['status'] = "Updated";
 	$_SESSION['status_text'] = "Record updated successfully!";
 	$_SESSION['status_code'] = "success";
 	header('Location: officials.php');

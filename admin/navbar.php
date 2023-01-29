@@ -41,7 +41,17 @@ if(!isset($_SESSION['email'])) {
                                 <li><a href="residents.php"><strong>Residents</strong></a></li>
                                 <li><a href="officials.php"><strong>Officials</strong></a></li>
                                 <li><a href="reports.php"><strong>Reports</strong></a></li>
-                                <li><a href="certificates.php"><strong>Certificates</strong></a></li>
+                                <li class="has-dropdown active">
+                                    <a href="#" data-toggle="dropdown" class="dropdown-toggle menu-item">Certificates</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="generate_brgycert.php">Barangay Clearance</a></li>
+                                        <li><a href="#">Brgy Busseness Permit</a></li>
+                                        <!-- <li>
+                                            <a href="certificates.php"><strong>Certificates</strong></a>    
+                                        </li> -->
+                                    </ul>
+                                    <!-- <a href="certificates.php"><strong>Certificates</strong></a> -->
+                                </li>
 
                               <!--   <li class="has-dropdown active">
                                     <a href="#" data-toggle="dropdown" class="dropdown-toggle menu-item">My Account</a>

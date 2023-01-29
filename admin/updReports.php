@@ -22,7 +22,7 @@ $result = mysqli_query($cn,$query);
 $min_length = 40; // minimum length of word to be stored in database
 if (strlen($narrative) >= $min_length) {
 	if ($result === true) {
-		$_SESSION['status'] = "Success";
+		$_SESSION['status'] = "Updated";
 		$_SESSION['status_text'] = "Report updated successfully!";
 		$_SESSION['status_code'] = "success";
 		header('Location: reports.php');

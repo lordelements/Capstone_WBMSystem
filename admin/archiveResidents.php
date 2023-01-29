@@ -21,10 +21,4 @@ include ('../condb.php');
 		header('Location: residents.php');
 	}
 
-	// function myAlert1($msg, $url){
-	// echo '<script language="javascript">alert("'.$msg.'");</script>';
-	// echo "<script>document.location = '$url'</script>";
-	// }
-	// myAlert1("Account Status Changed!", "residents.php");
-
 ?>

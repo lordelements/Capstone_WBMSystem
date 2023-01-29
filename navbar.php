@@ -1,7 +1,7 @@
 <?php   
     session_start();
     include 'condb.php';
-    if(isset($_SESSION['email']) && $_SESSION['password']) {
+    if(isset($_SESSION['email'])) {
         header('Location: admin/index.php');
         exit(0);
     }
@@ -165,7 +165,8 @@
          
                 <!-- Vlidate password -->
                 <script src="validatepass.js"></script>
-                <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+                <!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
+                <script src="assets/js/sweetalert.min.js"></script>
                 <!-- <script>
                     	swal({
                         	title: "Good job!",

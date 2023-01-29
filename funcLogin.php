@@ -2,8 +2,9 @@
 	include("condb.php");
 	session_start();
 
-	$email = $_POST['email'];
-	$password = $_POST['password'];
+	$email = mysqli_real_escape_string($cn, $_POST['email']);
+	$password = mysqli_real_escape_string($cn, $_POST['password']);
+	// $password = $_POST['password'];
 	$sql= mysqli_query($cn,"SELECT * FROM accounts WHERE email= '$email' AND password= '$password'");
 	$row= mysqli_num_rows($sql);
 	$rows=mysqli_fetch_assoc($sql);
@@ -16,7 +17,7 @@
 			$_SESSION['email'] = $email;
 			$_SESSION['logid'] = $logid;
 			// $_SESSION['success'] = "Welcome to Barangay Mangement System";
-			$_SESSION['status'] = "Good job";
+			$_SESSION['status'] = "	Welcome";
 			$_SESSION['status_text'] = "Welcome to Barangay Mangement System";
 			$_SESSION['status_code'] = "success";
 			header("location:admin/index.php");

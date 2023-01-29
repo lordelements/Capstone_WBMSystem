@@ -89,7 +89,7 @@
 
 
 <!-- Tables List For residents -->
-<section class=" p-3 mt-lg-5 clearfix">
+<section class="p-3 mt-lg-5 clearfix">
 <table class="table align-middle mb-0 bg-white t-10">
 	<thead class="bg-light">
 		<tr>

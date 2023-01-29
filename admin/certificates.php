@@ -34,15 +34,15 @@
 					<div class="slider--content">
 						<div class="text-center" style="margin-top: -110px;">
 							<div class="row"><br><br>
-								<div class="column1" style="width:400px;background: white;padding-top:150px;padding-bottom:150px;padding-left:20px;padding-right:20px;border-radius: 10px;display:inline;float:left;margin-left:-30px">
+								<div class="column1" style="width:400px;padding-top:150px;padding-bottom:150px;padding-left:20px;padding-right:20px;border-radius: 10px;display:inline;float:left;margin-left:-30px">
 									<h3 style="color:black">Barangay Certificate</h3><br>
 									<a target='_blank' class='btn btn-light' style='width:100%;border:1px solid black;color:black' href='../Barangay_Certificate.docx'>Download File</a>
 								</div>
-								<div class="column2" style="width:400px;background: white;padding-top:150px;padding-bottom:150px;padding-left:20px;padding-right:20px;border-radius: 10px;display:inline;float:left;margin-left:10px">
+								<div class="column2" style="width:400px;padding-top:150px;padding-bottom:150px;padding-left:20px;padding-right:20px;border-radius: 10px;display:inline;float:left;margin-left:10px">
 									<h3 style="color:black">Barangay Business Permit</h3><br>
 									<a target='_blank' class='btn btn-light' style='width:100%;border:1px solid black;color:black' href='../brgycert.docx'>Download File</a>
 								</div>
-								<div class="column3" style="width:400px;background: white;padding-top:150px;padding-bottom:150px;padding-left:20px;padding-right:20px;border-radius: 10px;display:inline;float:left;margin-left:10px">
+								<div class="column3" style="width:400px;padding-top:150px;padding-bottom:150px;padding-left:20px;padding-right:20px;border-radius: 10px;display:inline;float:left;margin-left:10px">
 									<h3 style="color:black">Certificate of Indigency</h3><br>
 									<a target='_blank' class='btn btn-light' style='width:100%;border:1px solid black;color:black' href='../brgycert.docx'>Download File</a>
 								</div>
@@ -52,6 +52,7 @@
 				</div>
 			</div>
 		</div>
+		
 		<div class="carousel slider-navs" data-slide="1" data-slide-rs="1" data-autoplay="true" data-nav="true" data-dots="false" data-space="0" data-loop="true" data-speed="800">
 			<div class="slide--item bg-overlay bg-overlay-dark3">
 				<div class="bg-section">
@@ -69,6 +70,7 @@
 				</div>
 			</div>
 		</div>
+		
 	</section>
 	<script>
 		$(document).ready(function(){
@@ -85,6 +87,7 @@
 <script src="assets/js/functions.js"></script>
 <script src="assets/loadGeo.js"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
 
 
 <script>
@@ -117,6 +120,27 @@
 
 </script>
 
+<style>
+	.column1, .column2, .column3 {
+		background: #FFFBAC;
+		border-radius: 0.4em;
+		cursor: pointer;
+		transition: all 0.4s ease-in;
+ 		box-shadow: 0.4rem 0.4rem 0.6rem #00000040;
+}
+
+.column1, .column2, .column3:hover{
+	 background: #FFFBAC;
+	}
+	.btn:hover {
+		background: #0081C9;
+		color: #FFFFFF !important;
+		cursor: pointer;
+		transition: all 0.4s ease-in;
+		border: #FFD56F;
+	}
+
+</style>
 
 </body>
 <!-- index Sun, 18 Jul 2021 09:33:18 GMT -->

@@ -23,7 +23,7 @@ $result = mysqli_query($cn,$query);
 
 $min_length = 100; // minimum length of word to be stored in database
 if ($result === true) {
-	$_SESSION['status'] = "Success";
+	$_SESSION['status'] = "Updated";
 	$_SESSION['status_text'] = "Barangay resident is updated successfully.";
 	$_SESSION['status_code'] = "success";
 	header('Location: residents.php');	

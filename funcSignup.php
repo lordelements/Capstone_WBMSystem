@@ -3,6 +3,11 @@
 include 'condb.php';
 session_start();
 
+
+// Receiving the values entered and storing
+// in the variables
+// Data sanitization is done to prevent
+// SQL injections
 $fname = $cn->real_escape_string($_POST['fname']);
 $mname = $cn->real_escape_string($_POST['mname']);
 $lname = $cn->real_escape_string($_POST['lname']);
@@ -15,6 +20,24 @@ $contact = $cn->real_escape_string($_POST['contact']);
 // $position = $_POST['position'];
 
 $full = $fname . ' ' . $mname . ' ' . $lname;
+
+
+// Ensuring that the user has not left any input field blank
+// error messages will be displayed for every blank input
+
+// if (!empty($email)) {
+// 	 $_SESSION['status'] = "Required";
+// 	$_SESSION['status_text'] = "Email is required";
+// 	$_SESSION['status_code'] = "error";
+// 	header('Location: index.php');
+// }
+// if (!empty($pass)) {
+// 	 $_SESSION['status'] = "Required";
+// 	 $_SESSION['status_text'] = "Password is required";
+// 	 $_SESSION['status_code'] = "error";
+// 	 header('Location: index.php');
+// }
+
 
 $res = mysqli_query($cn, "SELECT * FROM accounts where email = '$email'");
 
