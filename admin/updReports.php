@@ -19,8 +19,7 @@ $dateandtime = $_POST['dateandtime'];
 $query = "UPDATE reports SET incident='$incident', incidentplace='$incidentplace', complainant='$complainant', complainee='$complainee', witness1='$witness1', witness2='$witness2', narrative='$narrative', dateandtime='$dateandtime'WHERE reportid='$repid'";
 $result = mysqli_query($cn,$query);
 
-$min_length = 40; // minimum length of word to be stored in database
-if (strlen($narrative) >= $min_length) {
+if ($narrative) {
 	if ($result === true) {
 		$_SESSION['status'] = "Updated";
 		$_SESSION['status_text'] = "Report updated successfully!";
@@ -34,12 +33,13 @@ if (strlen($narrative) >= $min_length) {
 		header('Location: reports.php');
 	}
 
-} else {
-	$_SESSION['status'] = "Error";
-	$_SESSION['status_text'] = "Word must be at least $min_length characters long.";
-	$_SESSION['status_code'] = "error";
-	header('Location: reports.php');
 }
+//  else {
+// 	$_SESSION['status'] = "Error";
+// 	$_SESSION['status_text'] = "Word must be at least $min_length characters long.";
+// 	$_SESSION['status_code'] = "error";
+// 	header('Location: reports.php');
+// }
 
 	
 ?>

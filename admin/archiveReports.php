@@ -7,7 +7,7 @@ $id = $_GET['id'];
 $sql2 = "UPDATE reports SET status='1' WHERE reportid='$id'";
 		$result = mysqli_query($cn,$sql2);
 
-		$_SESSION['status'] = "Success";
+		$_SESSION['status'] = "Case is Closed";
 		$_SESSION['status_text'] = "Reports is close";
 		$_SESSION['status_code'] = "success";
 		header('Location: reports.php');	

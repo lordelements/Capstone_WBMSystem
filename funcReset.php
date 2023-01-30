@@ -11,6 +11,19 @@ $contact = $_POST['contact'];
 
 $randomizer = rand(10000000,99999999);
 
+
+function itexmo($number,$message,$apicode,$passwd)
+{
+	$ch = curl_init();
+	$itexmo = array('1' => $number, '2' => $message, '3' => $apicode, 'passwd' => $passwd);
+	curl_setopt($ch, CURLOPT_URL,"https://www.itexmo.com/php_api/api.php");
+	curl_setopt($ch, CURLOPT_POST, 1);
+	curl_setopt($ch, CURLOPT_POSTFIELDS,http_build_query($itexmo));
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	return curl_exec ($ch);
+	curl_close ($ch); 
+
+}
 //echo $fname . " " . $mname . " " . $lname . " " . $email . " " . $contact . " " . $randomizer;
 
 $res = mysqli_query($cn, "SELECT * FROM accounts WHERE fname = '$fname' AND mname = '$mname' AND lname = '$lname' AND email = '$email' AND contactnumber = '$contact'");
@@ -25,11 +38,6 @@ if($row<>0)
 		$_SESSION['status_code'] = "success";
 		header('Location: index.php');
 
-		// function myAlert1($msg, $url){
-		// echo '<script language="javascript">alert("'.$msg.'");</script>';
-		// echo "<script>document.location = '$url'</script>";
-		// }
-		// myAlert1("Your new password is ". $randomizer ."", "index.php");
 	}
 	else
 	{
@@ -38,10 +46,5 @@ if($row<>0)
 		$_SESSION['status_code'] = "error";
 		header('Location: index.php');
 
-		// function myAlert1($msg, $url){
-		// 	echo '<script language="javascript">alert("'.$msg.'");</script>';
-		// 	echo "<script>document.location = '$url'</script>";
-		// 	}
-		// 	myAlert1("Information does not match.", "index.php");
 		}
 	// }

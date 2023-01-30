@@ -37,7 +37,7 @@
 								<div class="row"><br>
 									<div class="col-xs-12 col-sm-6 col-md-4">
 										<div class="form-group">
-											<div class="select--box" data-aos="fade-right">
+											<div class="select--box">
 												<input type="text" name="incident" class="form-control" autocomplete="off" id="select-incident" placeholder="Incident" required>
 											</div>
 										</div>

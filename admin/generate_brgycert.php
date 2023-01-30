@@ -24,6 +24,8 @@
 <section id="heroSearch" class="hero-search mtop-0 pt-0 pb-0">
 			
 <div class="container">
+<button type="button" class="btn btn-outline-primary"><a href="generate_brgycert.php" class="text-decoration-none text-dark fw-bold">Back</a></button>
+    
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="slider--content">

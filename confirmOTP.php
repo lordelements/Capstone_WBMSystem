@@ -31,48 +31,27 @@
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="slider--content">
-						<!-- <form class="mb-0" method="post" action="confirmOTP.php" enctype="multipart/form-data"> -->
 						<form class="mb-0" method="post" action="funcReset.php" enctype="multipart/form-data">
 							<div class="form-box search-properties">
 								<div class="row">
-								<center><h3>Forgot Password</h3>
-									<div class="col-xs-12 col-sm-6 col-md-4">
+								<center><h3>Confirm OTP</h3>
+									<div class="col-xs-12 col-sm-6 col-md-6">
 										<div class="form-group">
 											<div class="select--box">
-												<input type="text" name="lname" class="form-control" autocomplete="off" id="select-location" placeholder="Last Name" required>
-											</div>
-										</div>
-									</div>
-									<div class="col-xs-12 col-sm-6 col-md-4">
-										<div class="form-group">
-											<div class="select--box">
-												<input type="text" name="mname" class="form-control" autocomplete="off" id="select-location" placeholder="Middle Name">
-											</div>
-										</div>
-									</div>
-									<div class="col-xs-12 col-sm-6 col-md-4">
-										<div class="form-group">
-											<div class="select--box">
-												<input type="text" name="fname" class="form-control" autocomplete="off" id="select-location" placeholder="First Name" required>
+												<input type="text" name="contact" class="form-control" id="select-contact" placeholder="Contact Number" >
+												<!-- <input type="text" name="contact" class="form-control" id="select-contact" placeholder="Contact Number" readonly> -->
 											</div>
 										</div>
 									</div>
 									<div class="col-xs-12 col-sm-6 col-md-6">
 										<div class="form-group">
 											<div class="select--box">
-												<input type="text" name="email" class="form-control" autocomplete="off" id="select-email" placeholder="Email Address" required>
-											</div>
-										</div>
-									</div>
-									<div class="col-xs-12 col-sm-6 col-md-6">
-										<div class="form-group">
-											<div class="select--box">
-												<input type="text" name="contact" class="form-control" autocomplete="off" id="select-contact" placeholder="Contact Number" required>
+												<input type="text" name="contact" class="form-control" id="select-contact" placeholder="Check your OTP on the contact number provided and input it here.">
 											</div>
 										</div>
 									</div>
 									<div class="col-xs-12 col-sm-6 col-md-12">
-										<input type="submit" value="Reset Password" name="submit" class="btn btn--primary btn--block">
+										<input type="submit" value="Submit OTP" name="submit" class="btn btn--primary btn--block">
 									</div>
 								</div>
 							</div>
@@ -149,4 +128,4 @@
 
 </body>
 <!-- index Sun, 18 Jul 2021 09:33:18 GMT -->
-</html>
+</html> 

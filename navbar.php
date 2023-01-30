@@ -78,15 +78,15 @@
                                                                 ?>
                                                             </h3>
                                                         </div>
-                                                        <?php endif ?> -->
+                                                    <?php endif ?> -->
                                                         
                                                         <form class="mb-0" method="post" action="funcLogin.php">
 
                                                             <div class="form-group">
-                                                                <input type="email" class="form-control" autocomplete="off" name="email" id="login-email" placeholder="Email Address">
+                                                                <input type="email" class="form-control" autocomplete="off" name="email" id="login-email" placeholder="Email Address" required>
                                                             </div>
                                                             <div class="form-group">
-                                                                <input type="password" class="form-control" autocomplete="off" name="password" id="login-password" placeholder="Password">
+                                                                <input type="password" class="form-control" autocomplete="off" name="password" id="login-password" placeholder="Password" required>
                                                             </div>
                                                             <input type="submit" class="btn btn--primary btn--block" name="submit" value="Sign In">
                                                             <a href="forgot.php" class="forget-password">Forget your password?</a>
@@ -148,7 +148,7 @@
 -->
 
                 </div>
-                <?php
+                <!-- <?php
                     if(isset($_SESSION['status']) && $_SESSION['status'])
                     ?>
                         <script>
@@ -161,7 +161,7 @@
                         </script>
                     <?php
                     unset($_SESSION['status']);
-                    ?> 
+                    ?>  -->
          
                 <!-- Vlidate password -->
                 <script src="validatepass.js"></script>

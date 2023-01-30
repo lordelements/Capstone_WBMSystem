@@ -9,7 +9,7 @@ $sql2 = "UPDATE residents SET status='0' WHERE residentid='$id'";
 	
 	if ($result === true) {
 			
-		$_SESSION['status'] = "Success";
+		$_SESSION['status'] = "Active Resident";
 		$_SESSION['status_text'] = "Active Barangay residents of Zone 1";
 		$_SESSION['status_code'] = "success";
 		header('Location: residents.php');	

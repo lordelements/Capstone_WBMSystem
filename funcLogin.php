@@ -3,7 +3,7 @@
 	session_start();
 
 	$email = mysqli_real_escape_string($cn, $_POST['email']);
-	$password = mysqli_real_escape_string($cn, $_POST['password']);
+	$password = mysqli_real_escape_string($cn, md5($_POST['password']));
 	// $password = $_POST['password'];
 	$sql= mysqli_query($cn,"SELECT * FROM accounts WHERE email= '$email' AND password= '$password'");
 	$row= mysqli_num_rows($sql);

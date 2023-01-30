@@ -9,8 +9,8 @@ include ('../condb.php');
 	
 	if ($result === true) {
 			
-		$_SESSION['status'] = "Status Changed";
-		$_SESSION['status_text'] = "Barangay Residents of Zone 1 is not active residents.";
+		$_SESSION['status'] = "Not Active Residents";
+		$_SESSION['status_text'] = "This is not Residents Active of Zone 1.";
 		$_SESSION['status_code'] = "success";
 		header('Location: residents.php');	
 		

@@ -32,11 +32,14 @@
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="slider--content">
-						<div class="text-center" style="margin-top: -110px;">
-						
-							<?php	include('mission_vission_cards.php')?>
-
-							<!-- <img src="../logo.png" alt="Barangay Zone 1 Bulan Sorsogon logo" width="600" height="600" style="margin-top: -20px;"> -->
+						<div class="text-center" style="margin-top: -110px; opacity:0.8;">
+							<div class="form-group" >
+								<div class="col-sm-6">
+								    <center>
+										<?php include('mission_vission_cards.php')?>
+								    </center>
+							     </div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -68,8 +71,22 @@
 			<br>
 			<br>
 			<br>
+			
+			<div class="row">
+			  <div class="col-sm-12">
+			  	<h1 style="color:gray">History</h1>
+			  	<h5 style="line-height: 1.3;color:black;text-align:justify;">
+			  		The poblacion of the Municipality of Bulan, Sorsogon was divided into several Puroks during the term of President Carlos P. Garcia. The following Puroks were Ilawod, Loyo, Canipaan, Iraya, and Central. Mr Benito Posas was appointed by Municipal Mayor Luis De Castro, as Barrio Lieutenant of Purok Ilawod and serve for four (4) years.<br><br>
+
+			  		Under President Ferdinand E. Marcos, Presidential Decree was promulgated, changing the name of Barrio into Barangay. The poblacion was again divided into eight (8) Zones: Zone 1, Zone 2, Zone 3, Zone 4, Zone 5, Zone 6, Zone 7, Zone 8, covering the entire poblacion. Part of Purok Ilawod become Zone 1, covering the area bounded on the North by Zone 3, from the South was River/creek and sea; from the East was Barangay Libertad and Managa-naga river and from the West was Barangay Zone 2.<br><br>
+
+			  		During the organization of the People's Assembly in 1989, the first Zone Chairman of Zone 1 was Andres G. Porras. Mr. Andres G. Porras was elected as Barangay Chairman, during the first election, followed by Ms. Limagros G. Llacer, then followed by Andres G. Porras up to the present time.
+			  	</h5>
+			  </div>
+			</div><br>
+
 			<div class="row mt-10">
-				<h1>Location</h1>
+				<h1 style="color:gray">Location</h1>
 				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1376.3053039834626!2d123.8753769749101!3d12.662473739238814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a0d6b0a1d8fb9d%3A0x38f686ccf365e88a!2sHaylo%20Street%2C%20Bulan%2C%20Sorsogon!5e0!3m2!1sen!2sph!4v1670843880423!5m2!1sen!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 			</div>
 			
@@ -80,7 +97,7 @@
 
 	<div class="container mb-10 p-30">
 	<div class="row bg-overlay bg-overlay-dark3">
-		<h1>Barangay Zone 1 Bulan Sorsogon</h1> 
+		<h1 style="color:gray">Barangay Zone 1 Bulan Sorsogon</h1> 
 		<img src="../assets/brgyinfobg.jpg" style="height: 500px; width: 100%; border-radius: 5px;">
 	</div>
 	<!-- <?php	

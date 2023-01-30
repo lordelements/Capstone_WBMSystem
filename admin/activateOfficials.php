@@ -9,7 +9,7 @@ $id = $_GET['id'];
 
 		if ($result === true) {
 			
-			$_SESSION['status'] = "Success";
+			$_SESSION['status'] = "Active Official";
 			$_SESSION['status_text'] = "Active Official of Barangay Zone 1.";
 			$_SESSION['status_code'] = "success";
 			header('Location: officials.php');	

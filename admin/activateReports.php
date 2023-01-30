@@ -9,7 +9,7 @@ $id = $_GET['id'];
 
 	if ($result === true) {
 			
-		$_SESSION['status'] = "Success";
+		$_SESSION['status'] = "Active Case";
 		$_SESSION['status_text'] = "Blotter Reports is Active.";
 		$_SESSION['status_code'] = "success";
 		header('Location: reports.php');	
